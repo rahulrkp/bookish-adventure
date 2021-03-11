@@ -28,10 +28,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let values: [Any] = [1, 2, "Fish"]
+//        print(#file)
+//        print(#line)
+//        print(#function)
 
         
-        let linkvc = LinksViewController()
+        let linkvc = StructViewController()
         self.navigationController?.pushViewController(linkvc, animated: true)
+//        let linkvc = EnumViewController()
+//        self.navigationController?.pushViewController(linkvc, animated: true)
+//        let linkvc = LinksViewController()
+//        self.navigationController?.pushViewController(linkvc, animated: true)
 //        let nums = [4,1,2,1,2,2,2]
 //        print(majorityElement(nums))
         // Do any additional setup after loading the view.
@@ -62,11 +69,11 @@ class ViewController: UIViewController {
 //        print(removeDuplicates(&input))
 //        print(plusOne([1,2,3]))
 //        print(climbStairs(9))
-        var nums1 = [1,2,3,0,0,0]
-        merge(&nums1, 3, [2,5,6], 3)
+//        var nums1 = [1,2,3,0,0,0]
+//        merge(&nums1, 3, [2,5,6], 3)
 //        selectionSort()
 //        bubbleSort()
-        findDuplicateString("abcbda")
+//        findDuplicateString("abcbda")
     }
     
     func superViewAndSuper() {

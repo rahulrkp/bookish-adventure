@@ -16,6 +16,8 @@
 		B75BD51225F08A2000A8C065 /* TestProj21Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BD51125F08A2000A8C065 /* TestProj21Tests.swift */; };
 		B75BD51D25F08A2000A8C065 /* TestProj21UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75BD51C25F08A2000A8C065 /* TestProj21UITests.swift */; };
 		B777A1EF25F30ABC00AA5894 /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */; };
+		B7A95ABA25FA5B3C00352F8A /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */; };
+		B7A95ABF25FA83E800352F8A /* StructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A95ABE25FA83E800352F8A /* StructViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		B75BD51C25F08A2000A8C065 /* TestProj21UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProj21UITests.swift; sourceTree = "<group>"; };
 		B75BD51E25F08A2000A8C065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
+		B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
+		B7A95ABE25FA83E800352F8A /* StructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				B75BD4FA25F08A1F00A8C065 /* AppDelegate.swift */,
 				B75BD4FC25F08A1F00A8C065 /* SceneDelegate.swift */,
 				B75BD4FE25F08A1F00A8C065 /* ViewController.swift */,
+				B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */,
+				B7A95ABE25FA83E800352F8A /* StructViewController.swift */,
 				B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */,
 				B75BD50025F08A1F00A8C065 /* Main.storyboard */,
 				B75BD50325F08A2000A8C065 /* Assets.xcassets */,
@@ -262,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B777A1EF25F30ABC00AA5894 /* LinksViewController.swift in Sources */,
+				B7A95ABF25FA83E800352F8A /* StructViewController.swift in Sources */,
+				B7A95ABA25FA5B3C00352F8A /* EnumViewController.swift in Sources */,
 				B75BD4FF25F08A1F00A8C065 /* ViewController.swift in Sources */,
 				B75BD4FB25F08A1F00A8C065 /* AppDelegate.swift in Sources */,
 				B75BD4FD25F08A1F00A8C065 /* SceneDelegate.swift in Sources */,
