@@ -18,6 +18,7 @@
 		B777A1EF25F30ABC00AA5894 /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */; };
 		B7A95ABA25FA5B3C00352F8A /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */; };
 		B7A95ABF25FA83E800352F8A /* StructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A95ABE25FA83E800352F8A /* StructViewController.swift */; };
+		B7A95AC525FABB8900352F8A /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A95AC425FABB8900352F8A /* GCDViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
 		B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		B7A95ABE25FA83E800352F8A /* StructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructViewController.swift; sourceTree = "<group>"; };
+		B7A95AC425FABB8900352F8A /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				B75BD4FA25F08A1F00A8C065 /* AppDelegate.swift */,
 				B75BD4FC25F08A1F00A8C065 /* SceneDelegate.swift */,
 				B75BD4FE25F08A1F00A8C065 /* ViewController.swift */,
+				B7A95AC425FABB8900352F8A /* GCDViewController.swift */,
 				B7A95AB925FA5B3C00352F8A /* EnumViewController.swift */,
 				B7A95ABE25FA83E800352F8A /* StructViewController.swift */,
 				B777A1EE25F30ABC00AA5894 /* LinksViewController.swift */,
@@ -271,6 +274,7 @@
 				B7A95ABF25FA83E800352F8A /* StructViewController.swift in Sources */,
 				B7A95ABA25FA5B3C00352F8A /* EnumViewController.swift in Sources */,
 				B75BD4FF25F08A1F00A8C065 /* ViewController.swift in Sources */,
+				B7A95AC525FABB8900352F8A /* GCDViewController.swift in Sources */,
 				B75BD4FB25F08A1F00A8C065 /* AppDelegate.swift in Sources */,
 				B75BD4FD25F08A1F00A8C065 /* SceneDelegate.swift in Sources */,
 			);

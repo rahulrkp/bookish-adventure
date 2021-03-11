@@ -32,11 +32,34 @@ indirect enum AirthmaticExpression {
     case multi(AirthmaticExpression,AirthmaticExpression)
 }
 
+enum MyColor {
+    case green
+    case red
+    case blue
+    case all
+}
+
+extension MyColor {
+    var value : UIColor {
+        switch self {
+        case .blue:
+            return UIColor.blue
+        case .red:
+            return UIColor.red
+        case .green:
+            return UIColor.green
+        default:
+            return UIColor.white
+        }
+    }
+}
+ 
 class EnumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = MyColor.green.value
+//        print(MyColor.blue.value)
         let three = AirthmaticExpression.value(3)
         let four = AirthmaticExpression.value(4)
         let add = AirthmaticExpression.add(three, four)
