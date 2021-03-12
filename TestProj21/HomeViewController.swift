@@ -22,20 +22,20 @@ class ViewC: ViewB {
     
 }
 class ViewD: ViewB {}
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
-    
+    @objc func buttonClick() {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let values: [Any] = [1, 2, "Fish"]
 //        print(#file)
 //        print(#line)
 //        print(#function)
+        view.backgroundColor = .white
 
-        
-        let linkvc = StructViewController()
-        self.navigationController?.pushViewController(linkvc, animated: true)
-//        let linkvc = EnumViewController()
+////        let linkvc = EnumViewController()
 //        self.navigationController?.pushViewController(linkvc, animated: true)
 //        let linkvc = LinksViewController()
 //        self.navigationController?.pushViewController(linkvc, animated: true)
