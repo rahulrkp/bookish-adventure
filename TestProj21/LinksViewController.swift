@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ListNode {
+fileprivate class ListNode {
     var val: Int
     var next: ListNode?
     init(_ value: Int, nextnode: ListNode? = nil) {
@@ -31,6 +31,8 @@ class ListNode {
     }
 }
 
+
+
 class LinksViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -49,13 +51,13 @@ class LinksViewController: UIViewController {
         
 //        list1.lastNode()?.next = list2
 //        let list3 =  list1
-//        let revList = reverseList(list2)
+        let revList = reverseList(list2)
 //        let sum = addTwoNumbers(list1, list2)
 //        let list = mergeTwoLists1(list1, list2)
     }
 //   list1 [1,3,5] list2 = [2,4,6]
     
-    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    fileprivate func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
 
         var list1 = l1
         var list2 = l2
@@ -77,7 +79,7 @@ class LinksViewController: UIViewController {
         return head.next
     }
     
-    func mergeTwoLists1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    fileprivate func mergeTwoLists1(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var list1 = l1
         var list2 = l2
         
@@ -100,7 +102,7 @@ class LinksViewController: UIViewController {
         return head.next
     }
     
-    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    fileprivate func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         
         var list1 = l1
         var list2 = l2
@@ -124,42 +126,27 @@ class LinksViewController: UIViewController {
         return head.next
     }
     
-    func reverseList(_ head: ListNode?) -> ListNode? {
+    fileprivate func reverseList(_ head: ListNode?) -> ListNode? {
 //        return reverseListRecursively(head)
         return reverseListInteratively(head)
     }
     
-    func reverseListInteratively(_ head: ListNode?) -> ListNode? {
-//        guard var head = head else {
-//            return nil
-//        }
-        // 1,2
-        //2,1
-        var pointer = head
-        var output: ListNode? = nil
-        while pointer != nil {
-            print(pointer?.val)
-            pointer = pointer?.next
-        }
-        return output
-    }
-    
-//    func reverseListInteratively(_ head: ListNode?) -> ListNode? {
-//        var head = head
-//        var n: ListNode? = head?.next
-//        var p: ListNode? = nil
-//        while head != nil {
-//
-//            head!.next = p
-//            p = head
-//            head = n
-//            n = head?.next
-//
-//        }
-//        return p
-//    }
+    fileprivate func reverseListInteratively(_ head: ListNode?) -> ListNode? {
+        var head = head
+        var n: ListNode? = head?.next
+        var p: ListNode? = nil
+        while head != nil {
 
-    func reverseListRecursively(_ node: ListNode?) -> ListNode? {
+            head!.next = p
+            p = head
+            head = n
+            n = head?.next
+
+        }
+        return p
+    }
+
+    fileprivate func reverseListRecursively(_ node: ListNode?) -> ListNode? {
         if let node = node {
             if node.next == nil {
                 return node
@@ -191,7 +178,7 @@ class LinksViewController: UIViewController {
 //        }
 //    }
     
-    func mergeTwoLists2(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    fileprivate func mergeTwoLists2(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         let output: ListNode?
         var valArr = [Int]()
         var head1 = l1

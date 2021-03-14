@@ -21,7 +21,7 @@ enum Beverage: CaseIterable {
     case cofee, tea, juice
 }
 
-enum Person {
+fileprivate enum Person {
     case myName(name: String)
     case myAGE(age: Int)
 }
@@ -85,7 +85,7 @@ class EnumViewController: UIViewController {
         }
     }
     
-    func getPerson(person: Person) {
+   fileprivate func getPerson(person: Person) {
         switch person {
         case .myAGE(age: let age):
             print(age)

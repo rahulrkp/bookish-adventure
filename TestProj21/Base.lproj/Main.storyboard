@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2y-HN-qH0">
-                                <rect key="frame" x="157" y="169" width="44" height="30"/>
+                                <rect key="frame" x="157" y="130" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ENUM"/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaT-AA-BAC">
-                                <rect key="frame" x="156" y="242" width="46" height="90"/>
+                                <rect key="frame" x="155" y="168" width="46" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Struct"/>
                                 <connections>
@@ -33,11 +33,51 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBY-op-700">
-                                <rect key="frame" x="156" y="388" width="46" height="90"/>
+                                <rect key="frame" x="157" y="224" width="46" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="GCD"/>
                                 <connections>
                                     <segue destination="t11-mc-UO7" kind="show" id="Dez-fw-16R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5N-4f-LxK">
+                                <rect key="frame" x="156" y="308" width="46" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ARC"/>
+                                <connections>
+                                    <segue destination="BiN-99-59Y" kind="show" id="w9T-ul-JHD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-O9-b2X">
+                                <rect key="frame" x="148" y="409" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Closures"/>
+                                <connections>
+                                    <segue destination="Paj-Bp-aLk" kind="show" id="xKB-9G-3ME"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-T6-brE">
+                                <rect key="frame" x="152" y="371" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LinkList"/>
+                                <connections>
+                                    <segue destination="eXf-nM-4JV" kind="show" id="9le-ni-rCG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxB-b1-Blw">
+                                <rect key="frame" x="152" y="464" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Array2D"/>
+                                <connections>
+                                    <segue destination="4Dd-Lw-HyV" kind="show" id="2tm-57-vZr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOz-Zl-bJG">
+                                <rect key="frame" x="124" y="534" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LinkList_generic"/>
+                                <connections>
+                                    <segue destination="tSO-3J-APX" kind="show" id="J0v-mf-SV8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="102.89855072463769" y="-175.44642857142856"/>
         </scene>
-        <!--Enum View Controller-->
+        <!--Enum-->
         <scene sceneID="QUq-iI-5BO">
             <objects>
-                <viewController id="Jgf-7s-PKn" customClass="EnumViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Enum" id="Jgf-7s-PKn" customClass="EnumViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WHQ-cS-RPQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +105,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsU-TH-AOu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="-277"/>
+        </scene>
+        <!--Array View Controller-->
+        <scene sceneID="8zF-52-V9b">
+            <objects>
+                <viewController id="4Dd-Lw-HyV" customClass="ArrayViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NlX-yJ-nXO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CM1-X8-Ta8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YP8-8c-60z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEQ-vH-ct7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-120" y="466"/>
+        </scene>
+        <!--LinkList-->
+        <scene sceneID="KIl-Ji-nDb">
+            <objects>
+                <viewController title="LinkList" id="BiN-99-59Y" customClass="ARCViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NLQ-tx-e4D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uZu-9L-2Vn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Ej-Ik-gpf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hm-RK-ql7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="334"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6Yh-bl-jit">
@@ -142,10 +214,26 @@
             </objects>
             <point key="canvasLocation" x="1053.6231884057972" y="258.48214285714283"/>
         </scene>
-        <!--Struct View Controller-->
+        <!--Link List-->
+        <scene sceneID="8Y1-qC-TsZ">
+            <objects>
+                <viewController title="Link List" id="eXf-nM-4JV" customClass="LinksViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rMO-gU-b3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GcJ-oq-0QQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UCE-i5-u7t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqU-g5-1h4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="389"/>
+        </scene>
+        <!--Struct-->
         <scene sceneID="BBV-lJ-hFQ">
             <objects>
-                <viewController id="Dwa-5G-WGA" customClass="StructViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Struct" id="Dwa-5G-WGA" customClass="StructViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0u-xZ-wfl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +245,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-LE-4Yb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1589" y="-144"/>
+        </scene>
+        <!--Closurs View Controller-->
+        <scene sceneID="lDr-XB-ykV">
+            <objects>
+                <viewController id="Paj-Bp-aLk" customClass="ClosursViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p3q-x5-Ty8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="c8c-eI-3Zi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ohj-FE-7Ll"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6S-Ux-ROF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="-229"/>
+        </scene>
+        <!--LinkListGeneric-->
+        <scene sceneID="lkb-sd-Aui">
+            <objects>
+                <viewController title="LinkListGeneric" id="tSO-3J-APX" customClass="LinkListGenericViewController" customModule="TestProj21" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v7A-KR-o3M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="y0b-5Q-1xS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abc-jW-Hib"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUg-pg-wkK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2723" y="-432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eyh-Zl-bvn">

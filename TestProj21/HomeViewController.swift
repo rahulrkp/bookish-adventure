@@ -27,8 +27,12 @@ class HomeViewController: UIViewController {
     @objc func buttonClick() {
         
     }
+    func parseAndAddOne(_ s: String) -> Int {
+        return Int(s, radix: 10)! + 1
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print(parseAndAddOne("hello10"))
 //        let values: [Any] = [1, 2, "Fish"]
 //        print(#file)
 //        print(#line)
@@ -74,8 +78,137 @@ class HomeViewController: UIViewController {
 //        selectionSort()
 //        bubbleSort()
 //        findDuplicateString("abcbda")
+        print(firstDuplicate(a: [2, 1, 3, 5, 3, 2]))
+//        print(sumOfTwo(a: [1,2,3], b: [10, 20, 30, 40], v: 42))
+//        let test = -2000 % (100000007)
+//        print(sumInRange(nums: [34, 19, 21, 5, 1, 10, 26, 46, 33, 10], queries: [[3,7],
+//                                                                                 [3,4],
+//                                                                                 [3,7],
+//                                                                                 [4,5],
+//                                                                                 [0,5]]))
+        
+//        let input = [-2, 2, 5, -11, 6]//[1, -2, 3, -4, 5, -3, 2, 2, 2]
+//        print(arrayMaxConsecutiveSum2(inputArray: input))
+//        print(firstNotRepeatingCharacter(s: "abacabad"))
+//        print("abcd".components(separatedBy: "4"))
+//        print(amendTheSentence(s: "CodesignalIsAwesome"))
+        let path = "/home/a/./x/../b//c/"
+        print(simplifyPath(path: path))
+    }
+    // simplifyPath(path) = "/home/a/b/c".
+ 
+    func simplifyPath(path: String) -> String {
+        var path = path
+        if path.hasSuffix("/") {
+            path.removeLast()
+        }
+        path = path.replacingOccurrences(of: "//", with: "")
+//        path = path.replacingOccurrences(of: "../", with: "")
+//        path = path.1`    `replacingOccurrences(of: "./", with: "")
+        if path.contains("..") {
+            let index = path.range(of: "..")
+            print(index)
+        }
+        return path
+    }
+    func amendTheSentence(s: String) -> String {
+        let strArr = Array(s)
+        var newStr = ""
+        var prev = ""
+
+        for char in strArr {
+            if char.isUppercase {
+                newStr.append(prev)
+                if !newStr.isEmpty { newStr.append(" ")}
+                prev = String(char)
+            } else {
+                prev.append(char)
+            }
+        }
+        newStr.append(prev)
+        return newStr.lowercased()
+    }
+    func firstNotRepeatingCharacter(s: String) -> Character {
+        if s.count < 1 {
+            return "_"
+        } else if s.count == 1 {
+            return s.first!
+        }
+        
+        var dict = [Character:Int]()
+        for char in s {
+            if let stored = dict[char] {
+                dict[char] = stored + 1
+            } else {
+                dict[char] = 1
+            }
+        }
+        for item in s {
+            if let count = dict[item], count == 1 {
+                return item
+            }
+        }
+        return "_"
+    }
+//    for (int i = 0; i < size; i++)
+//        {
+//            max_ending_here = max_ending_here + a[i];
+//            if (max_so_far < max_ending_here)
+//                max_so_far = max_ending_here;
+//
+//            if (max_ending_here < 0)
+//                max_ending_here = 0;
+//        }
+//        return max_so_far;
+    func arrayMaxConsecutiveSum2(inputArray: [Int]) -> Int {
+        guard var max = inputArray.first else {
+            return 0
+        }
+        
+        return 0
     }
     
+    func sumInRange(nums: [Int], queries: [[Int]]) -> Int {
+        let modulus = 1_000_000_000 + 7
+
+        func sumRange(range: [Int]) -> Int {
+            let firstInd = range.first!
+            let last = range.last!
+            let sum = nums[firstInd...last].reduce(0, +)
+            return sum
+        }
+        var count = 0
+        for item in queries {
+            count = count + sumRange(range: item)
+        }
+        let result = count % modulus
+        return result >= 0 ? result : result + modulus
+    }
+
+    func sumOfTwo(a: [Int], b: [Int], v: Int) -> Bool {
+        let setA = Set(a)
+        for item in setA {
+            if b.contains(v - item) {
+                return true
+            }
+        }
+        return false
+    }
+    
+
+    func firstDuplicate(a: [Int]) -> Int {
+        var a = a
+        for i in 0..<a.count {
+            if Int(a[abs(a[i]) - 1]) >= 0 {
+                a[abs(a[i]) - 1] = -a[abs(a[i]) - 1]
+            } else {
+                return abs(a[i])
+            }
+        }
+        return -1
+        
+    }
+
     func superViewAndSuper() {
         let viewA = ViewA()
 
