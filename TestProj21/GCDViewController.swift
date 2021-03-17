@@ -19,10 +19,19 @@ class GCDViewController: UIViewController {
     let url1 = URL(string: "https://cdn.cocoacasts.com/3cbae1d5e178606580518a81da69e5af30a7bb5b/image-1.jpg")
     let url2 = URL(string: "https://cdn.cocoacasts.com/3cbae1d5e178606580518a81da69e5af30a7bb5b/image-2.jpg")
 
+    let serialDQ = DispatchQueue(label: "app-my_Serial")
+    let conDQ = DispatchQueue(label: "dispatch", attributes: .concurrent)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        let queue = OperationQueue()
+        let operation1 = BlockOperation {
+            print("block")
+        }
+        operation1.completionBlock = {
+            print("completionBlock")
+        }
+        queue.addOperation(operation1)
+
     }
     
     @IBAction func concurrentAction(_ sender: Any) {

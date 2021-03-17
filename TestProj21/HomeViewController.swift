@@ -24,25 +24,22 @@ class ViewC: ViewB {
 class ViewD: ViewB {}
 class HomeViewController: UIViewController {
 
-    @objc func buttonClick() {
+    func parseAndAddOne(_ s: String) {
+        let greeting = "Hi there! It's nice to meet you! 👋"
+        let endOfSentence = greeting.firstIndex(of: "!")!
+        let firstSentence = greeting[...endOfSentence]
+        print(firstSentence)
+        // firstSentence == "Hi there!"
         
-    }
-    func parseAndAddOne(_ s: String) -> Int {
-        return Int(s, radix: 10)! + 1
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(parseAndAddOne("hello10"))
+        print(parseAndAddOne("hello10"))
 //        let values: [Any] = [1, 2, "Fish"]
 //        print(#file)
 //        print(#line)
 //        print(#function)
-        view.backgroundColor = .white
 
-////        let linkvc = EnumViewController()
-//        self.navigationController?.pushViewController(linkvc, animated: true)
-//        let linkvc = LinksViewController()
-//        self.navigationController?.pushViewController(linkvc, animated: true)
 //        let nums = [4,1,2,1,2,2,2]
 //        print(majorityElement(nums))
         // Do any additional setup after loading the view.
@@ -72,13 +69,13 @@ class HomeViewController: UIViewController {
 //        var input = [0,0,1,1,1,2,2,3,3,4]
 //        print(removeDuplicates(&input))
 //        print(plusOne([1,2,3]))
-//        print(climbStairs(9))
+        print(climbStairs(9))
 //        var nums1 = [1,2,3,0,0,0]
 //        merge(&nums1, 3, [2,5,6], 3)
 //        selectionSort()
 //        bubbleSort()
 //        findDuplicateString("abcbda")
-        print(firstDuplicate(a: [2, 1, 3, 5, 3, 2]))
+//        print(firstDuplicate(a: [2, 1, 3, 5, 3, 2]))
 //        print(sumOfTwo(a: [1,2,3], b: [10, 20, 30, 40], v: 42))
 //        let test = -2000 % (100000007)
 //        print(sumInRange(nums: [34, 19, 21, 5, 1, 10, 26, 46, 33, 10], queries: [[3,7],
@@ -92,9 +89,191 @@ class HomeViewController: UIViewController {
 //        print(firstNotRepeatingCharacter(s: "abacabad"))
 //        print("abcd".components(separatedBy: "4"))
 //        print(amendTheSentence(s: "CodesignalIsAwesome"))
-        let path = "/home/a/./x/../b//c/"
-        print(simplifyPath(path: path))
+//        let path = "/home/a/./x/../b//c/"
+//        print(simplifyPath(path: path))
+        
+//        let a = [6, 7, 3, 8]//, the output should be
+//        nextLarger(a) = [7, 8, 8, -1].
+//        nextLarger(a: a)
+        let a = [1, 4, 2, 1, 7, 6]
+//        nearestGreater(a: a)
+        let departure = [2.4, 1]
+        let destination = [5, 7.3]
+//        print(perfectCity(departure: departure, destination: destination))
+//        let s = "John has USD 300. Mary borrowed USD 75 from him."
+//        print(myAtoi(s))
+//        let s = "2[b3[a]]"
+//        print(decodeString(s: s))
+//        let s = "(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"//"(*))"//"(*)"//"()"
+//        print(checkValidParenthesis(s))
+        let s = "({[]})"
+        print(isValidbrackets(s))
+        
+        myAnyObject(obj1: "6", obj2: s as AnyObject)
     }
+    func myAnyObject(obj1: Any, obj2: AnyObject) {
+        print(obj1,obj2)
+        var myobj: Any = [5,7,"hh"]
+        var myobj1 = 5 as Any
+        myobj = "5"
+        myobj1 = "5"
+
+    }
+//    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+//"(){}[]"
+    func isValidbrackets(_ s: String) -> Bool {
+        var dict = [Character:Character]()
+        dict["("] = ")"
+        dict["{"] = "}"
+        dict["["] = "]"
+        var stack = [Character]()
+        for item in s {
+            if let isOpen = dict[item] {
+                stack.append(item)
+            } else {
+                if let lastelement = stack.last,lastelement == item {
+                    stack.removeLast()
+                } else {
+                        return false
+                    }
+                }
+            }
+        return stack.isEmpty
+    }
+
+    func checkValidParenthesis(_ s: String) -> Bool {
+        var star = 0
+        var open = 0
+        
+        for item in s {
+            if item == "(" {
+                open += 1
+            } else if item == ")" {
+                open -= 1
+            } else if item == "*" {
+                star += 1
+            }
+        }
+        if abs(open) > star {
+            return false
+        }
+        if star >= abs(open) {
+            return true
+        }
+       
+        return false
+    }
+//    func decodeString(s: String) -> String {
+//        var output = ""
+//        var stackNum = [Int]()
+//        var stackStr = [String]()
+//        var str = ""
+//
+//        for item in s {
+//            if item.isNumber {
+//                for index in
+//            }
+//        }
+//
+//        return output
+//    }
+
+    func myAtoi(_ s: String) -> String {
+        var output = ""
+        for (index,item) in s.components(separatedBy: " ").enumerated() {
+            print(index,Int(item))
+            let decimalChar = CharacterSet.decimalDigits
+            let deciRange = item.rangeOfCharacter(from: decimalChar)
+//            let intVal = Int(decimalChar)
+//            if let intVal = Int(item) {
+//                let decimalChar = CharacterSet.decimalDigits
+//                let deciRange = item.rangeOfCharacter(from: decimalChar)
+//                let val = Double(intVal) * 0.8
+//                output.append(String(val))
+//                output.append(" ")
+//            } else {
+//                output.append(item)
+//                output.append(" ")
+//            }
+        }
+        return output
+        }
+    func perfectCity(departure: [Double], destination: [Double]) -> Double {
+        let depart = departure.first! - departure.last!
+        let desti = destination.first! - destination.last!
+        let sum = depart + desti
+        return sum
+    }
+
+//    For a = [1, 4, 2, 1, 7, 6], the output should be
+//    nearestGreater(a) = [1, 4, 1, 2, -1, 4].
+
+
+    func nearestGreater(a: [Int]) -> [Int] {
+        var output = [Int]()
+        for (index,item) in a.enumerated() {
+            var leftmin = -1
+            for indexB in stride(from: index, through: 0, by: -1) {
+                if a[indexB] > item {
+                    leftmin = indexB
+                    break
+                }
+            }
+            
+            var rightmin = -1
+            for indexN in index+1..<a.count {
+                if a[indexN] > item {
+                    rightmin = indexN
+                    break
+                }
+            }
+            
+            if leftmin == rightmin {
+                output.append(-1)
+            }
+            
+            else {
+                var max = 0
+                if leftmin < 0 {
+                    max = rightmin
+                } else if rightmin < 0 {
+                    max = leftmin
+                } else {
+                    max = leftmin < rightmin ? leftmin : rightmin
+                }
+                output.append(max)
+            }
+        }
+        return output
+    }
+
+    func fareEstimator(ride_time: Int, ride_distance: Int, cost_per_minute: [Double], cost_per_mile: [Double]) -> [Double] {
+        var cost = [Double]()
+        for (index,costMin) in cost_per_minute.enumerated() {
+            let per_mile = cost_per_mile[index]
+            let per_minute = costMin
+            let costOne = per_minute*Double(ride_time) + per_mile*Double(ride_distance)
+            cost.append(costOne)
+        }
+        return cost
+    }
+
+    func nextLarger(a: [Int]) -> [Int] {
+        var arr = Array(repeating: -1, count: a.count)
+        for (index,item) in a.enumerated() {
+            print(item)
+            let current = item
+            for index1 in index+1 ..< a.count {
+                let next = a[index1]
+                if current < next {
+                    arr[index] = next
+                    break
+                }
+            }
+        }
+        return arr
+    }
+
     // simplifyPath(path) = "/home/a/b/c".
  
     func simplifyPath(path: String) -> String {
@@ -331,6 +510,7 @@ class HomeViewController: UIViewController {
         print(nums1.sorted())
     }
     func climbStairs(_ n: Int) -> Int {
+        var n = 4
         if n < 2 {
             return 1
         }
@@ -338,6 +518,7 @@ class HomeViewController: UIViewController {
         var step2 = 1
         var result = 0
         for item in 2...n {
+            print(step1,step2)
             result = step1 + step2
             step2 = step1
             step1 = result

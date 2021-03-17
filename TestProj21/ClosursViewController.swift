@@ -16,6 +16,23 @@ fileprivate class ListNode<T> {
      }
  }
 
+enum MyFColor: Float {
+        
+    case redcolor
+    case greencolor
+    case yellocolor
+    var mycolor: UIColor {
+        switch self {
+        case .redcolor:
+            return UIColor.red
+        case .greencolor:
+            return .green
+        case .yellocolor:
+            return .yellow
+        }
+    }
+}
+
 class ClosursViewController: UIViewController {
 
     fileprivate func removeKFromList(l: ListNode<Int>?, k: Int) -> ListNode<Int> {
@@ -31,15 +48,44 @@ class ClosursViewController: UIViewController {
         }
         return head
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
 //        let clos = { (input) -> Int in
 //            statement
 //        }
-        let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
-        var reversedNames = names.sorted(by: backward)
-        print(reversedNames)
+        let str = { print("welcome")}
+        str()
+        
+        let devideC = { (val1: Int, val2: Int) -> Int in
+            return val1/val2
+        }
+        print(devideC(4, 2))
+        
+        func strAccend(string1: String, string2: String) -> Bool {
+            string1 < string2
+        }
+        print(strAccend(string1: "a", string2: "b"))
+            
+        let sum = {(val1: Int, val2: Int) -> Int in
+            return val1 + val2
+        }
+        print(sum(4,6))
+        
+        var count:[Int] = [5, 10, -6, 75, 20]
+        let decend = count.sorted { (a, b) -> Bool in
+            a > b
+        }
+        let assend = count.sorted { (a, b) -> Bool in
+            a < b
+        }
+        
+        print(decend)
+        print(assend)
+        
+        let color = MyFColor.redcolor
+        self.view.backgroundColor = color.mycolor
     }
     
     func backward(_ str1: String, _ str2: String) -> Bool {
