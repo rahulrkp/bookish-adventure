@@ -109,7 +109,157 @@ class HomeViewController: UIViewController {
         let s = "({[]})"
         print(isValidbrackets(s))
         
-        myAnyObject(obj1: "6", obj2: s as AnyObject)
+//        myAnyObject(obj1: "6", obj2: s as AnyObject)
+//          var arr = [1, 2, 3, 5]
+//        print(missingInteger(&arr))
+//        var arr = [3,1,2,4,3]
+//        print(TapeEquilibrium(&arr))
+//        var jumpfrog = [1,3,1,4,2,3,5,4]
+//        print(FrogRiverOne(5, &jumpfrog))
+
+//        var arr = [3,4,4,6,1,4,4]
+//        print(maxCounters(3, arr))
+//        var A = [1, 3, 6, 4, 1, 2]
+//        print(MissingInteger(&A))
+
+        var arr = [4,1,3]
+        print(sequence(&arr))
+    }
+
+    public func sequence(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var dict = [Int: Bool]()
+        for item in A {
+            dict[item] = true
+        }
+        for item in 1...A.count {
+            if dict[item] == nil {
+                return 0
+            }
+        }
+        return 1
+    }
+    public func MissingInteger(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var dict = [Int: Bool]()
+        for item in A {
+            dict[item] = true
+        }
+
+        var count = 1
+        for item in 1...A.count {
+            if dict[item] == nil {
+                return item
+            }
+            count += 1
+        }
+
+        return count
+/////////////////////////
+        var counter = [Int: Bool]()
+        for i in A {
+            counter[i] = true
+        }
+
+        var i = 1
+        while true {
+            if counter[i] == nil {
+                return i
+            } else {
+                i += 1
+            }
+        }
+    }
+
+    public func maxCounters(_ N : Int, _ A : [Int]) -> [Int] {
+        // write your code in Swift 3.0 (Linux)
+        var minElement = 0
+        var maxElement = 0
+        var arr = Array(repeating: 0, count: N)
+        for item in A {
+            if item <= N {
+                let index = item - 1
+                if arr[index ] < minElement  {
+                    arr[index] = minElement + 1
+                } else {
+                    arr[index] += 1
+                }
+                maxElement = max(arr[index], maxElement)
+            } else {
+                minElement = maxElement
+            }
+        }
+
+        for i in 0..<arr.count {
+            if arr[i] < minElement {
+                arr[i] = minElement
+            }
+        }
+
+        return arr
+    }
+
+    public func FrogRiverOne(_ X : Int, _ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var filledX = Array(repeating: -1, count: X)
+
+        for (i, x) in A.enumerated() {
+            if x <= X && filledX[x-1] == -1 {
+                filledX[x-1] = i
+            }
+        }
+
+        var maxT = 0
+        for x in filledX {
+            if x == -1 { // never filled
+                return -1
+            }
+            else {
+                maxT = max(maxT, x)
+            }
+        }
+
+        return maxT
+
+    }
+
+    public func TapeEquilibrium(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+
+        let totalT  = A.reduce(0, +)
+
+        var leftT = 0
+        var rightT = totalT
+        var minDif = Int.max
+        let n = A.count
+        for p in 0 ..< n-1 {
+            let x = A[p]
+            leftT += x
+            rightT -= x
+
+            let dif = abs(leftT - rightT)
+            minDif = min(minDif, dif)
+        }
+        return minDif
+    }
+
+    public func missingInteger(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+//       [1,2,3,4,5]
+        var sum = (A.count + 1)*(A.count+2)/2
+
+        for item in A {
+            sum = sum - item
+        }
+
+        return sum
+    }
+    public func frogJump(_ X : Int, _ Y : Int, _ D : Int) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+
+        let initial = Y - X
+        return Int(ceil(Double(initial)/Double(D)))
+
     }
     func myAnyObject(obj1: Any, obj2: AnyObject) {
         print(obj1,obj2)
