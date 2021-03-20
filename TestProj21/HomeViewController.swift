@@ -95,7 +95,7 @@ class HomeViewController: UIViewController {
 //        let a = [6, 7, 3, 8]//, the output should be
 //        nextLarger(a) = [7, 8, 8, -1].
 //        nextLarger(a: a)
-        let a = [1, 4, 2, 1, 7, 6]
+//        let a = [1, 4, 2, 1, 7, 6]
 //        nearestGreater(a: a)
         let departure = [2.4, 1]
         let destination = [5, 7.3]
@@ -122,10 +122,454 @@ class HomeViewController: UIViewController {
 //        var A = [1, 3, 6, 4, 1, 2]
 //        print(MissingInteger(&A))
 
-        var arr = [4,1,3]
-        print(sequence(&arr))
+//        var arr = [4,1,3]
+//        print(sequence(&arr))
+//        reverseWithSpecial(str: "abasdas@sdfsdf")
+//        let A = 4, B = 11 , K = 2
+//        print(CountDiv(A, B, K))
+//        var arr = [0,1,0,1,1]
+//        print(PassingCars(&arr))
+//        var brackets = "{[()()]}"
+//        print(Brackets(&brackets))
+//        var arr = [2,1,1,2,3,1]
+//        print(Distinct(&arr))
+//        print( MaxProductOfThree(&arr))
+//        var arr = [10, 50, 5, 1]//, 1, 8, 20]
+//        print(Triangle(&arr))
+        
+//        var a = [4, 3, 2, 1, 5], b = [0, 1, 0, 0, 0]
+//        print(FishRiver(&a, &b))
+        
+//        You are given three arrays of integers a, b, and c. Your task is to find the longest contiguous subarray of a containing only elements that appear in b but do not appear in c.
+//        var a = [2, 1, 7, 1, 1, 5, 3, 5, 2, 1, 1, 1], b = [1, 3, 5], c = [2, 3]
+//        print(longestInversionalSubarray(a: a, b: b, c: c))
+//        let arr = [8,5,6,16,5]
+//        print(boundedRatio(a: arr, l: 1, r: 3))
+//        let a = [25, 2, 3, 57, 38, 41]
+//        print(mostFrequentDigits(a: a))
+//        let a = [[3, 3, 4, 2],
+//                 [4, 4],
+//                 [4, 0, 3, 3],
+//                 [2, 3],
+//                 [3, 3, 3]]
+//        print(meanGroups(a: a))
+//        let numbers = [1, 2, 1, 3, 4]
+//        print(isZigzag(numbers: numbers))
+        
+        let a = [2, 4, 2, 7, 1, 6, 1, 1, 1], m = 4, k = 8
+        print(segmentsWithSum(a: a, m: m, k: k))
+    }
+    
+    func segmentsWithSum(a: [Int], m: Int, k:Int) -> Int {
+        var stackArr = [[Int]]()
+        for index in 0...a.count-m {
+            let firstIndex = index
+            let lastIndex = index + m
+            let arrone = Array(a[firstIndex..<lastIndex])
+            stackArr.append(arrone.sorted(by: >))
+        }
+        print(stackArr)
+        var output = 0
+        for item in stackArr {
+            if (item[0] + item[1]) > k {
+                output += 1
+            }
+        }
+        return output
     }
 
+    func isZigzag(numbers:[Int]) -> [Int] {
+        if numbers.count < 3 {
+            return [0]
+        }
+        var stack = [Int]()
+        for index in 1..<numbers.count-1 {
+            let current = numbers[index]
+            let next = numbers[index+1]
+            let prev = numbers[index-1]
+            if (current < next && current < prev) || (current>next && current>prev) {
+                stack.append(1)
+            } else {
+                stack.append(0)
+            }
+        }
+        return stack
+    }
+
+    
+    //    meanGroups(a) = [[0, 4],
+//                     [2, 3],
+//                     [1]]
+    func meanGroups(a: [[Int]]) -> [[Int]] {
+        var dict = [Int:Double]()
+        for (index,item) in a.enumerated() {
+            let sum = item.reduce(0, +)
+            let value = Double(sum)/Double(item.count)
+            dict[index] = value
+        }
+        let sortedTwo = dict.sorted {
+            return $0.value > $1.value
+        }
+        var dictIndex = [Double:[Int]]()
+        for (key,value) in sortedTwo {
+            if let anykey = dictIndex[value] {
+                var tempArr = anykey
+                tempArr.append(key)
+                dictIndex[value] = tempArr
+            } else {
+                dictIndex[value] = [key]
+            }
+        }
+        let output = dictIndex.values.sorted { (arr1, arr2) -> Bool in
+            if let one = arr1.first, let two = arr2.first {
+                return one < two
+            }
+            return false
+        }
+        
+        return output
+    }
+
+    func mostFrequentDigits(a: [Int]) -> [Int] {
+        var dict = [Int: Int]()
+
+        func addDict(arr:[Int]) {
+            for item in arr {
+                if let value = dict[item] {
+                    dict[item] = value + 1
+                } else {
+                    dict[item] = 1
+                }
+                
+            }
+        }
+        for item in a {
+            let string = String(item)
+
+            let digits = string.compactMap{ $0.wholeNumberValue } // [1, 2, 3, 4, 5, 6]
+
+            addDict(arr: digits)
+        }
+        let maxArr = dict.filter({$0.value == dict.values.max()})
+        return Array(maxArr.keys).sorted(by: <)
+    }
+
+    func boundedRatio(a: [Int], l: Int, r: Int) -> [Bool] {
+        var x: Int
+        var out = Array(repeating: false, count: a.count)
+        for i in 0..<a.count {
+            if Int(a[i]) % (i + 1) == 0 {
+                x = Int(a[i]) / (i + 1)
+                if x >= l && x <= r {
+                    out[i] = true
+                } else {
+                    out[i] = false
+                }
+            } else {
+                out[i] = false
+            }
+        }
+        return out
+    }
+
+
+    
+    public func FishRiver(_ A : inout [Int], _ B : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        guard A.count > 1 else { return 1 }
+        
+        var upstream = 0
+        var downstream = 0
+        var weight = 0
+        for index in 0..<B.count {
+            if B[index] == 0, weight == 0 {
+                upstream += 1
+                continue
+            }
+            
+            if B[index] == 1 {
+                weight = max(A[index], weight)
+                downstream += 1
+            } else {
+                if weight < A[index] {
+                    upstream += 1
+                    weight = 0
+                    downstream = 0
+                }
+            }
+        }
+
+        return upstream + downstream
+        
+    }
+
+    public func Triangle(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        if A.count < 3 {
+            return 0
+        }
+        A.sort()
+        for index in 2..<A.count {
+            let p = A[index]
+            let q = A[index-1]
+            let r = A[index-2]
+            let pq = p+q
+            let qr = q+r
+            let pr = p+r
+            if pq > r && qr > p && pr > q {
+                return 1
+            }
+        }
+        return 0
+    }
+    
+    public func NumberOfDiscIntersections(A : inout [Int]) -> Int {
+        // write your code in Swift 2.2
+        let N = A.count
+
+        if N < 2 {
+            return 0
+        }
+
+        var discStart: [Int] = Array(repeating: 0, count: N)
+
+        var discEnd: [Int] = Array(repeating: 0, count: N)
+
+        for i in 0..<N {
+            discStart[max(0, i - A[i])] += 1
+
+            if i + A[i] < 0 {
+                discEnd[N - 1] += 1
+            } else {
+                discEnd[min(N - 1, i + A[i])] += 1
+            }
+        }
+
+        var n = 0
+
+        var result = 0
+
+        for i in 0..<N {
+            if discStart[i] > 0 {
+                result += n * discStart[i]
+                result += discStart[i] * (discStart[i] - 1) / 2
+
+                if result > 10000000 {
+                    return -1
+                }
+
+                n += discStart[i]
+            }
+
+            if discEnd[i] > 0 {
+                n -= discEnd[i]
+            }
+        }
+
+        return result
+    }
+    
+    public func  MaxProductOfThree(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        let sortingArr = A.sorted()
+        let count = sortingArr.count
+        let max1 = sortingArr[count-1]
+        let max2 = sortingArr[count-2]
+        let max3 = sortingArr[count-3]
+        
+        let min1 = sortingArr[0]
+        let min2 = sortingArr[1]
+
+        let a = max1*max2*max3
+        let b = min1*min2*max1
+        
+        return max(a, b)
+        
+    }
+    
+    public func Distinct(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        return Set(A).count
+        var stack = [Int]()
+        for item in A{
+            if !stack.contains(item){
+                stack.append(item)
+            }
+        }
+        return stack.count
+    }
+
+    
+    public func Brackets(_ S : inout String) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+//        let dictStr = ["[": "]", "(":")","{":"}"]
+        var stack = ""
+        for item in S{
+            switch item {
+            case "[","{","(":
+                stack.append(item)
+            case ")":
+                print(item)
+                if stack.last == "(" {
+                    stack.removeLast()
+                } else {
+                    return 0
+                }
+            case "}":
+                print(item)
+                if stack.last == "{" {
+                    stack.removeLast()
+                } else {
+                    return 0
+                }
+            case "]":
+                print(item)
+                if stack.last == "[" {
+                    stack.removeLast()
+                } else {
+                    return 0
+                }
+            default:
+                break
+            }
+        }
+        return stack.isEmpty ? 1 : 0
+    }
+
+    
+//    A[0] = 0
+//      A[1] = 1
+//      A[2] = 0
+//      A[3] = 1
+//      A[4] = 1
+    public func PassingCars(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var count = 0
+
+            var p = 0
+
+            for i in A {
+                if i == 0 {
+                    p += 1
+                } else {
+                    count += p
+                }
+
+                if count > 1000000000 {
+                    return -1
+                }
+            }
+
+            return count
+    }
+
+    public func MinAvgTwoSlice(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+            var sums = Array(repeating: 0, count: A.count)
+        var index = 0
+        var min = Double.greatestFiniteMagnitude
+        
+        for i in 0..<sums.count {
+            let sum = i - 1 < 0 ? 0 : sums[i - 1]
+            let sum2 = i - 2 < 0 ? 0 : sums[i - 2]
+            let sum3 = i - 3 < 0 ? 0 : sums[i - 3]
+            
+            sums[i] = sum + A[i]
+
+            if i > 0 {
+                let avg = Double(sums[i] - sum2) / 2
+                if avg < min {
+                    index = i - 1
+                    min = avg
+                }
+            }
+            
+            if i > 1 {
+                let avg = Double(sums[i] - sum3) / 3
+                if avg < min {
+                    index = i - 1
+                    min = avg
+                }
+            }
+        }
+        return index
+
+    }
+
+    public func GenomicRangeQuery(_ S : inout String, _ P : inout [Int], _ Q : inout [Int]) -> [Int] {
+        // write your code in Swift 4.2.1 (Linux)
+        var retArr = [Int]()
+           var chrArr = [Character]()
+
+
+           for chr in S {
+               chrArr.append(chr)
+           }
+
+
+           for i in 0..<P.count {
+
+               var minFactor = 4
+
+               if P[i] - Q[i] == 0 {
+                   if chrArr[P[i]] == "A"{
+                       minFactor = 1
+                   }else if chrArr[P[i]] == "C"{
+                       minFactor = 2
+                   }else if chrArr[P[i]] == "G"{
+                       minFactor = 3
+                   }
+               }else {
+                   for j in P[i]...Q[i] {
+
+                       if chrArr[j] == "A"{
+                           minFactor = 1
+                               break
+                       }else if chrArr[j] == "C"{
+                               minFactor = 2
+                       }else if chrArr[j] == "G"{
+                               if minFactor > 2 {
+                                   minFactor = 3
+                                   }
+                           }
+                       }
+               }
+
+               retArr.append(minFactor)
+           }
+
+           return retArr
+    }
+    public func CountDiv(_ A : Int, _ B : Int, _ K : Int) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        //   let A = 6, B = 11 , K = 2
+        var index = A
+        var firstDivident = A
+        if A % K != 0 {
+            firstDivident = A + (K - A%K)
+        }
+        
+        var lastDivident = B - (B % K)
+        return (lastDivident-firstDivident)/K + 1
+//        return 0
+        
+    }
+
+    func reverseWithSpecial(str: String) -> String {
+        var str = "abcd$e"
+        let specialChar = "!@#$%^&*"
+        var strArr = Array(str)
+        let count = str.count
+        for index in 0..<strArr.count/2 {
+            if !specialChar.contains(strArr[index]) && !specialChar.contains(strArr[str.count-1-index]) {
+                let temp = strArr[index]
+                strArr[index] = strArr[str.count-1-index]
+                strArr[str.count-1-index] = temp
+            }
+        }
+        
+        return String(strArr)
+    }
     public func sequence(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         var dict = [Int: Bool]()
