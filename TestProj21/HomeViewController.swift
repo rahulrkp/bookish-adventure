@@ -23,7 +23,7 @@ class ViewC: ViewB {
 }
 class ViewD: ViewB {}
 class HomeViewController: UIViewController {
-
+    
     func parseAndAddOne(_ s: String) {
         let greeting = "Hi there! It's nice to meet you! 👋"
         let endOfSentence = greeting.firstIndex(of: "!")!
@@ -35,131 +35,386 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(parseAndAddOne("hello10"))
-//        let values: [Any] = [1, 2, "Fish"]
-//        print(#file)
-//        print(#line)
-//        print(#function)
-
-//        let nums = [4,1,2,1,2,2,2]
-//        print(majorityElement(nums))
+        //        let values: [Any] = [1, 2, "Fish"]
+        //        print(#file)
+        //        print(#line)
+        //        print(#function)
+        
+        //        let nums = [4,1,2,1,2,2,2]
+        //        print(majorityElement(nums))
         // Do any additional setup after loading the view.
-//        var Input: [Character] = ["H","a","n","n","a","h"]
-//        reverseString(&Input)
-//        print(Input)
-//        print(reverse("rahul"))
-//        var inputStr = "rahul patel"
-//        reverseStr(&inputStr)
-//        let s = "a", t = "b"
-//        print(isAnagram(s,t))
-//        var input = [0,1,0,3,12]
-//        moveZeroes(&input)
-//        let prices = [7,1,5,3,6,4] //7
-//        print(maxProfit(prices))
-//        print(titleToNumber("AB"))
-//        romanToInt("LVIII")
-//        lengthOfLongestSubstring("ohomm")
-//        print(findMedianSortedArrays([], [1,2,3,4,5]))
-//        print(longestPalindrome("babad"))
-//        print(isPalindrom("aba"))
-//        print(longestPalindrome("ababc"))
-//        print(reverse(900000))
-//        print(longestCommonPrefix(["flower","flow","flight"]))
-//        print(longestCommonPrefix(["abcd", "ab"]))
-//        print(isValidParentheses("([)]"))
-//        var input = [0,0,1,1,1,2,2,3,3,4]
-//        print(removeDuplicates(&input))
-//        print(plusOne([1,2,3]))
+        //        var Input: [Character] = ["H","a","n","n","a","h"]
+        //        reverseString(&Input)
+        //        print(Input)
+        //        print(reverse("rahul"))
+        //        var inputStr = "rahul patel"
+        //        reverseStr(&inputStr)
+        //        let s = "a", t = "b"
+        //        print(isAnagram(s,t))
+        //        var input = [0,1,0,3,12]
+        //        moveZeroes(&input)
+        //        let prices = [7,1,5,3,6,4] //7
+        //        print(maxProfit(prices))
+        //        print(titleToNumber("AB"))
+        //        romanToInt("LVIII")
+        //        lengthOfLongestSubstring("ohomm")
+        //        print(findMedianSortedArrays([], [1,2,3,4,5]))
+        //        print(longestPalindrome("babad"))
+        //        print(isPalindrom("aba"))
+        //        print(longestPalindrome("ababc"))
+        //        print(reverse(900000))
+        //        print(longestCommonPrefix(["flower","flow","flight"]))
+        //        print(longestCommonPrefix(["abcd", "ab"]))
+        //        print(isValidParentheses("([)]"))
+        //        var input = [0,0,1,1,1,2,2,3,3,4]
+        //        print(removeDuplicates(&input))
+        //        print(plusOne([1,2,3]))
         print(climbStairs(9))
-//        var nums1 = [1,2,3,0,0,0]
-//        merge(&nums1, 3, [2,5,6], 3)
-//        selectionSort()
-//        bubbleSort()
-//        findDuplicateString("abcbda")
-//        print(firstDuplicate(a: [2, 1, 3, 5, 3, 2]))
-//        print(sumOfTwo(a: [1,2,3], b: [10, 20, 30, 40], v: 42))
-//        let test = -2000 % (100000007)
-//        print(sumInRange(nums: [34, 19, 21, 5, 1, 10, 26, 46, 33, 10], queries: [[3,7],
-//                                                                                 [3,4],
-//                                                                                 [3,7],
-//                                                                                 [4,5],
-//                                                                                 [0,5]]))
+        //        var nums1 = [1,2,3,0,0,0]
+        //        merge(&nums1, 3, [2,5,6], 3)
+        //        selectionSort()
+        //        bubbleSort()
+        //        findDuplicateString("abcbda")
+        //        print(firstDuplicate(a: [2, 1, 3, 5, 3, 2]))
+        //        print(sumOfTwo(a: [1,2,3], b: [10, 20, 30, 40], v: 42))
+        //        let test = -2000 % (100000007)
+        //        print(sumInRange(nums: [34, 19, 21, 5, 1, 10, 26, 46, 33, 10], queries: [[3,7],
+        //                                                                                 [3,4],
+        //                                                                                 [3,7],
+        //                                                                                 [4,5],
+        //                                                                                 [0,5]]))
         
-//        let input = [-2, 2, 5, -11, 6]//[1, -2, 3, -4, 5, -3, 2, 2, 2]
-//        print(arrayMaxConsecutiveSum2(inputArray: input))
-//        print(firstNotRepeatingCharacter(s: "abacabad"))
-//        print("abcd".components(separatedBy: "4"))
-//        print(amendTheSentence(s: "CodesignalIsAwesome"))
-//        let path = "/home/a/./x/../b//c/"
-//        print(simplifyPath(path: path))
+        //        let input = [-2, 2, 5, -11, 6]//[1, -2, 3, -4, 5, -3, 2, 2, 2]
+        //        print(arrayMaxConsecutiveSum2(inputArray: input))
+        //        print(firstNotRepeatingCharacter(s: "abacabad"))
+        //        print("abcd".components(separatedBy: "4"))
+        //        print(amendTheSentence(s: "CodesignalIsAwesome"))
+        //        let path = "/home/a/./x/../b//c/"
+        //        print(simplifyPath(path: path))
         
-//        let a = [6, 7, 3, 8]//, the output should be
-//        nextLarger(a) = [7, 8, 8, -1].
-//        nextLarger(a: a)
-//        let a = [1, 4, 2, 1, 7, 6]
-//        nearestGreater(a: a)
+        //        let a = [6, 7, 3, 8]//, the output should be
+        //        nextLarger(a) = [7, 8, 8, -1].
+        //        nextLarger(a: a)
+        //        let a = [1, 4, 2, 1, 7, 6]
+        //        nearestGreater(a: a)
         let departure = [2.4, 1]
         let destination = [5, 7.3]
-//        print(perfectCity(departure: departure, destination: destination))
-//        let s = "John has USD 300. Mary borrowed USD 75 from him."
-//        print(myAtoi(s))
-//        let s = "2[b3[a]]"
-//        print(decodeString(s: s))
-//        let s = "(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"//"(*))"//"(*)"//"()"
-//        print(checkValidParenthesis(s))
-        let s = "({[]})"
-        print(isValidbrackets(s))
+        //        print(perfectCity(departure: departure, destination: destination))
+        //        let s = "John has USD 300. Mary borrowed USD 75 from him."
+        //        print(myAtoi(s))
+        //        let s = "2[b3[a]]"
+        //        print(decodeString(s: s))
+        //        let s = "(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())"//"(*))"//"(*)"//"()"
+        //        print(checkValidParenthesis(s))
+        //        let s = "({[]})"
+        //        print(isValidbrackets(s))
         
-//        myAnyObject(obj1: "6", obj2: s as AnyObject)
-//          var arr = [1, 2, 3, 5]
-//        print(missingInteger(&arr))
-//        var arr = [3,1,2,4,3]
-//        print(TapeEquilibrium(&arr))
-//        var jumpfrog = [1,3,1,4,2,3,5,4]
-//        print(FrogRiverOne(5, &jumpfrog))
-
-//        var arr = [3,4,4,6,1,4,4]
-//        print(maxCounters(3, arr))
-//        var A = [1, 3, 6, 4, 1, 2]
-//        print(MissingInteger(&A))
-
-//        var arr = [4,1,3]
-//        print(sequence(&arr))
-//        reverseWithSpecial(str: "abasdas@sdfsdf")
-//        let A = 4, B = 11 , K = 2
-//        print(CountDiv(A, B, K))
-//        var arr = [0,1,0,1,1]
-//        print(PassingCars(&arr))
-//        var brackets = "{[()()]}"
-//        print(Brackets(&brackets))
-//        var arr = [2,1,1,2,3,1]
-//        print(Distinct(&arr))
-//        print( MaxProductOfThree(&arr))
-//        var arr = [10, 50, 5, 1]//, 1, 8, 20]
-//        print(Triangle(&arr))
+        //        myAnyObject(obj1: "6", obj2: s as AnyObject)
+        //          var arr = [1, 2, 3, 5]
+        //        print(missingInteger(&arr))
+        //        var arr = [3,1,2,4,3]
+        //        print(TapeEquilibrium(&arr))
+        //        var jumpfrog = [1,3,1,4,2,3,5,4]
+        //        print(FrogRiverOne(5, &jumpfrog))
         
-//        var a = [4, 3, 2, 1, 5], b = [0, 1, 0, 0, 0]
-//        print(FishRiver(&a, &b))
+        //        var arr = [3,4,4,6,1,4,4]
+        //        print(maxCounters(3, arr))
+        //        var A = [1, 3, 6, 4, 1, 2]
+        //        print(MissingInteger(&A))
         
-//        You are given three arrays of integers a, b, and c. Your task is to find the longest contiguous subarray of a containing only elements that appear in b but do not appear in c.
-//        var a = [2, 1, 7, 1, 1, 5, 3, 5, 2, 1, 1, 1], b = [1, 3, 5], c = [2, 3]
-//        print(longestInversionalSubarray(a: a, b: b, c: c))
-//        let arr = [8,5,6,16,5]
-//        print(boundedRatio(a: arr, l: 1, r: 3))
-//        let a = [25, 2, 3, 57, 38, 41]
-//        print(mostFrequentDigits(a: a))
-//        let a = [[3, 3, 4, 2],
-//                 [4, 4],
-//                 [4, 0, 3, 3],
-//                 [2, 3],
-//                 [3, 3, 3]]
-//        print(meanGroups(a: a))
-//        let numbers = [1, 2, 1, 3, 4]
-//        print(isZigzag(numbers: numbers))
+        //        var arr = [4,1,3]
+        //        print(sequence(&arr))
+        //        reverseWithSpecial(str: "abasdas@sdfsdf")
+        //        let A = 4, B = 11 , K = 2
+        //        print(CountDiv(A, B, K))
+        //        var arr = [0,1,0,1,1]
+        //        print(PassingCars(&arr))
+        //        var brackets = "{[()()]}"
+        //        print(Brackets(&brackets))
+        //        var arr = [2,1,1,2,3,1]
+        //        print(Distinct(&arr))
+        //        print( MaxProductOfThree(&arr))
+        //        var arr = [10, 50, 5, 1]//, 1, 8, 20]
+        //        print(Triangle(&arr))
         
-        let a = [2, 4, 2, 7, 1, 6, 1, 1, 1], m = 4, k = 8
-        print(segmentsWithSum(a: a, m: m, k: k))
+        var a = [4, 3, 2, 1, 5], b = [0, 1, 0, 0, 0]
+        print(FishRiver(&a, &b))
+        
+        //        You are given three arrays of integers a, b, and c. Your task is to find the longest contiguous subarray of a containing only elements that appear in b but do not appear in c.
+        //        var a = [2, 1, 7, 1, 1, 5, 3, 5, 2, 1, 1, 1], b = [1, 3, 5], c = [2, 3]
+        //        print(longestInversionalSubarray(a: a, b: b, c: c))
+        //        let arr = [8,5,6,16,5]
+        //        print(boundedRatio(a: arr, l: 1, r: 3))
+        //        let a = [25, 2, 3, 57, 38, 41]
+        //        print(mostFrequentDigits(a: a))
+        //        let a = [[3, 3, 4, 2],
+        //                 [4, 4],
+        //                 [4, 0, 3, 3],
+        //                 [2, 3],
+        //                 [3, 3, 3]]
+        //        print(meanGroups(a: a))
+        //        let numbers = [1, 2, 1, 3, 4]
+        //        print(isZigzag(numbers: numbers))
+        
+        //        let a = [2, 4, 2, 7, 1, 6, 1, 1, 1], m = 4, k = 8
+        //        print(segmentsWithSum(a: a, m: m, k: k))
+        //        let n = 5, a = [4, 0, 1, -2, 3]
+        //        print(mutateTheArray(n: n, a: a))
+        //        let arr = [1, 2, 2, 1, 2, 1, 2], queries = [[1, 1, 2], [1, 2, 1]]
+        //            , the output should be findTheTriples(arr, queries) = [4, 6].
+        //        print(findTheTriples(arr: arr, queries: queries))
+        //        let s = "abcdaaae"
+        //        print(threeCharsDistinct(s: s))
+        //        print(palindromeCutting(s: "aaacodedoc"))
+        //        let grid = [[0,1,-1],[1,0,-1],[1,1,1]]
+        //
+        //        print(cherryPickup(grid))
+        //      let   pattern = "010" , s = "amazing"
+        //        print(binaryPatternMatching(pattern: pattern, s: s))
+        let s1 = "super", s2 = "tower"
+        
+        //       let m = [[1, 0, 1, 5, 6],
+        //             [3, 3, 0, 3, 3],
+        //             [2, 9, 2, 1, 2],
+        //             [0, 2, 4, 2, 0]]
+        //
+        //        print(bestSquares(m: m, k: 2))
+        
+        //        let arr =  [1, 2, 2, 4]
+        //        print(canMakeTriangle(arr: arr))
+        
+        //        let number = "456"
+        let number = "6666"
+        //        print(threeDivSubsequences(number: number))
+        
+        //        print(getStringAllSubstring(str: "456"))
+        //        var A = [1, 3, 6, 4, 1, 2]
+        //        print(solution(&A))
     }
     
+    
+    func subarraysFilter(_ arr: [Int]) -> [[Int]] {
+        var result: [[Int]] = [[]]
+        for elem in arr {
+            for subarray in result {
+                result.append(subarray + [elem])
+            }
+        }
+        print(result)
+        return result
+    }
+    
+    func bestSquares(m: [[Int]], k: Int) -> Int {
+        var maxsum = 0
+        for index1 in 0...m.count - k {
+            for index2 in 0...m.count - k {
+                let x1 = index1
+                let x2 = index2
+                let y1 = index1+1
+                let y2 = index2+1
+                let sum = (m[x1][x2] + m[x1][x1] + m[x1][y1] + m[y2][y2])
+                if sum > maxsum {
+                    maxsum = sum
+                }
+            }
+        }
+        return maxsum
+    }
+    func getStringAllSubstring(str: String) {
+        let withPartialRange = str[..<str.index(str.startIndex, offsetBy: 1)]
+        print(withPartialRange)
+    }
+    
+    func threeDivSubsequences(number: String) -> Int {
+        let arrInt = Array(number)
+        var arrIntA = [Int]()
+        for item in arrInt{
+            arrIntA.append(Int(String(item))!)
+        }
+        let allSubArr = subarraysFilter(arrIntA)
+        print(allSubArr)
+        var count = 0
+        for item in allSubArr {
+            var myString = ""
+            _ = item.map{ myString = myString + "\($0)" }
+            let myInt = Int(myString)
+            if let num = myInt, num % 3 == 0 {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func canMakeTriangle(arr: [Int]) -> [Int] {
+        var output = [Int]()
+        for index in 0...arr.count-3 {
+            let a = arr[index]
+            let b = arr[index+1]
+            let c = arr[index+2]
+            if a + b > c, a + c > b, b + c > a {
+                output.append(1)
+            } else {
+                output.append(0)
+            }
+        }
+        return output
+    }
+    
+    //    func longestInversionalSubarray(a: [Int], b: [Int], c: [Int]) -> [Int] {
+    //        var allPosibleArr = [Int]()
+    //        var stringArr = String(a)
+    //        stringArr.jo
+    //        for item in a {
+    //
+    //        }
+    ////        let arrayAnotC = a.filter { !c.contains($0) }
+    //
+    ////        let arrayA = subarrays(arrayAnotC, count: b.count)
+    ////        let setA = Set(arrayA)
+    ////        print(setA)
+    //
+    ////        let allArr = subarraysFilter(arrayA)
+    ////        var count = 0
+    ////        for item in allArr {
+    ////            print(item)
+    ////            let answer = zip(item, b).map {$0.0 == $0.1}
+    //////            let difference = b.difference(from: item)
+    ////
+    ////            print(answer)
+    ////        }
+    //        return [0]
+    //    }
+    
+    func mergeStrings(s1: String, s2: String) -> String {
+        
+        return ""
+    }
+    
+    func binaryPatternMatching(pattern: String, s: String) -> Int {
+        let patterArr = Array(pattern) // [0,1,0]
+        let wovel = ["a","e","i","o","u","y"]
+        
+        func isMatcing(_ strtemp: String) -> Bool {
+            var strArr = Array(strtemp)
+            for (index,item) in strArr.enumerated() {
+                if wovel.contains(String(item)) && (patterArr[index] != "0") {
+                    return false
+                } else if !wovel.contains(String(item)) && (patterArr[index] == "0") {
+                    return false
+                }
+            }
+            return true
+        }
+        let stringArr = Array(s)
+        var count = 0
+        for index in 0...stringArr.count - patterArr.count {
+            let oneArr = stringArr[index...index+patterArr.count-1]
+            
+            print(oneArr)
+            if isMatcing(String(oneArr)) {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func cherryPickup(_ grid: [[Int]]) -> Int {
+        var count = 0
+        for arr in grid {
+            for (index,item) in arr.enumerated() {
+                print(item)
+                if item == 1 {
+                    count += 1
+                }
+            }
+        }
+        return count
+    }
+    func palindromeCutting( s: String ) -> String {
+        func getChar(_ str:String, _ index:Int) -> String {
+            let char = str[str.index(str.startIndex, offsetBy: index)]
+            return String(char)
+        }
+        if s.count < 1 {
+            return ""
+        }
+        var str = s
+        var temp = str + "?"
+        str += reverse(str)
+        temp += str
+        var n = temp.count
+        var lps = Array(repeating: 0, count: n)
+        
+        for i in 1..<n {
+            var len = lps[i-1]
+            while len > 0 && (getChar(temp, len) != getChar(temp, i)) {
+                len = lps[len - 1]
+            }
+            if getChar(temp, i) == getChar(temp, len) {
+                len += 1
+            }
+            lps[i] = len
+        }
+        
+        
+        return temp
+    }
+    func subarrays(_ arr: [Int], count: Int) -> [[Int]] {
+        var result: [[Int]] = [[]]
+        for elem in arr {
+            for subarray in result {
+                result.append(subarray + [elem])
+            }
+        }
+        return result.filter({$0.count == count})
+    }
+    
+    func getnumberOfcount(bigarr: [Int], subArr:[Int]) -> Int  {
+        let result = subarrays(bigarr, count: subArr.count)
+        let findSubarr = result.filter({$0 == subArr})
+        return findSubarr.count
+    }
+    
+    func findTheTriples(arr: [Int], queries: [[Int]]) -> [Int64] {
+        var output = [Int64]()
+        for item in queries {
+            let count = getnumberOfcount(bigarr: arr, subArr: item)
+            output.append(Int64(count))
+        }
+        return output
+    }
+    
+    func threeCharsDistinct(s:String) {
+        let strArr = Array(s)
+        var count = 0
+        for index in 0..<strArr.count-2 {
+            let one = strArr[index]
+            let two = strArr[index+1]
+            let three = strArr[index+2]
+            if (one != two) && (one != three) && (two != three) {
+                count += 1
+            }
+        }
+        print("threeCharsDistinct=\(count)")
+    }
+    
+    func mutateTheArray(n: Int, a: [Int]) -> [Int] {
+        var b = Array(repeating: 0, count: n)
+        for index in 0..<b.count{
+            
+            let currentValue = a[index]
+            var prevValue = 0
+            var nextValue = 0
+            if index > 0 {
+                prevValue = a[index-1]
+            }
+            if index < a.count-1 {
+                nextValue = a[index+1]
+            }
+            b[index] = currentValue+nextValue+prevValue
+        }
+        return b
+    }
     func segmentsWithSum(a: [Int], m: Int, k:Int) -> Int {
         var stackArr = [[Int]]()
         for index in 0...a.count-m {
@@ -177,7 +432,7 @@ class HomeViewController: UIViewController {
         }
         return output
     }
-
+    
     func isZigzag(numbers:[Int]) -> [Int] {
         if numbers.count < 3 {
             return [0]
@@ -195,11 +450,11 @@ class HomeViewController: UIViewController {
         }
         return stack
     }
-
+    
     
     //    meanGroups(a) = [[0, 4],
-//                     [2, 3],
-//                     [1]]
+    //                     [2, 3],
+    //                     [1]]
     func meanGroups(a: [[Int]]) -> [[Int]] {
         var dict = [Int:Double]()
         for (index,item) in a.enumerated() {
@@ -229,10 +484,10 @@ class HomeViewController: UIViewController {
         
         return output
     }
-
+    
     func mostFrequentDigits(a: [Int]) -> [Int] {
         var dict = [Int: Int]()
-
+        
         func addDict(arr:[Int]) {
             for item in arr {
                 if let value = dict[item] {
@@ -245,15 +500,15 @@ class HomeViewController: UIViewController {
         }
         for item in a {
             let string = String(item)
-
+            
             let digits = string.compactMap{ $0.wholeNumberValue } // [1, 2, 3, 4, 5, 6]
-
+            
             addDict(arr: digits)
         }
         let maxArr = dict.filter({$0.value == dict.values.max()})
         return Array(maxArr.keys).sorted(by: <)
     }
-
+    
     func boundedRatio(a: [Int], l: Int, r: Int) -> [Bool] {
         var x: Int
         var out = Array(repeating: false, count: a.count)
@@ -271,38 +526,39 @@ class HomeViewController: UIViewController {
         }
         return out
     }
-
-
     
     public func FishRiver(_ A : inout [Int], _ B : inout [Int]) -> Int {
-        // write your code in Swift 4.2.1 (Linux)
-        guard A.count > 1 else { return 1 }
+        // write your code in Swift 2.2
+        var flowingDown: [Int] = []
         
-        var upstream = 0
-        var downstream = 0
-        var weight = 0
-        for index in 0..<B.count {
-            if B[index] == 0, weight == 0 {
-                upstream += 1
-                continue
-            }
-            
-            if B[index] == 1 {
-                weight = max(A[index], weight)
-                downstream += 1
-            } else {
-                if weight < A[index] {
-                    upstream += 1
-                    weight = 0
-                    downstream = 0
+        var survivors = 0
+        
+        for i in 0..<A.count {
+            if B[i] == 0 {
+                if flowingDown.count == 0 {
+                    survivors += 1
+                } else {
+                    while flowingDown.count > 0 {
+                        if A[i] > flowingDown.last! {
+                            flowingDown.removeLast()
+                        } else {
+                            break
+                        }
+                        
+                        if flowingDown.count == 0 {
+                            survivors += 1
+                        }
+                    }
                 }
+            } else {
+                flowingDown.append(A[i])
             }
         }
-
-        return upstream + downstream
         
+        return survivors + flowingDown.count
     }
-
+    
+    
     public func Triangle(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         if A.count < 3 {
@@ -326,46 +582,46 @@ class HomeViewController: UIViewController {
     public func NumberOfDiscIntersections(A : inout [Int]) -> Int {
         // write your code in Swift 2.2
         let N = A.count
-
+        
         if N < 2 {
             return 0
         }
-
+        
         var discStart: [Int] = Array(repeating: 0, count: N)
-
+        
         var discEnd: [Int] = Array(repeating: 0, count: N)
-
+        
         for i in 0..<N {
             discStart[max(0, i - A[i])] += 1
-
+            
             if i + A[i] < 0 {
                 discEnd[N - 1] += 1
             } else {
                 discEnd[min(N - 1, i + A[i])] += 1
             }
         }
-
+        
         var n = 0
-
+        
         var result = 0
-
+        
         for i in 0..<N {
             if discStart[i] > 0 {
                 result += n * discStart[i]
                 result += discStart[i] * (discStart[i] - 1) / 2
-
+                
                 if result > 10000000 {
                     return -1
                 }
-
+                
                 n += discStart[i]
             }
-
+            
             if discEnd[i] > 0 {
                 n -= discEnd[i]
             }
         }
-
+        
         return result
     }
     
@@ -379,7 +635,7 @@ class HomeViewController: UIViewController {
         
         let min1 = sortingArr[0]
         let min2 = sortingArr[1]
-
+        
         let a = max1*max2*max3
         let b = min1*min2*max1
         
@@ -398,11 +654,11 @@ class HomeViewController: UIViewController {
         }
         return stack.count
     }
-
+    
     
     public func Brackets(_ S : inout String) -> Int {
         // write your code in Swift 4.2.1 (Linux)
-//        let dictStr = ["[": "]", "(":")","{":"}"]
+        //        let dictStr = ["[": "]", "(":")","{":"}"]
         var stack = ""
         for item in S{
             switch item {
@@ -435,37 +691,37 @@ class HomeViewController: UIViewController {
         }
         return stack.isEmpty ? 1 : 0
     }
-
     
-//    A[0] = 0
-//      A[1] = 1
-//      A[2] = 0
-//      A[3] = 1
-//      A[4] = 1
+    
+    //    A[0] = 0
+    //      A[1] = 1
+    //      A[2] = 0
+    //      A[3] = 1
+    //      A[4] = 1
     public func PassingCars(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         var count = 0
-
-            var p = 0
-
-            for i in A {
-                if i == 0 {
-                    p += 1
-                } else {
-                    count += p
-                }
-
-                if count > 1000000000 {
-                    return -1
-                }
+        
+        var p = 0
+        
+        for i in A {
+            if i == 0 {
+                p += 1
+            } else {
+                count += p
             }
-
-            return count
+            
+            if count > 1000000000 {
+                return -1
+            }
+        }
+        
+        return count
     }
-
+    
     public func MinAvgTwoSlice(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
-            var sums = Array(repeating: 0, count: A.count)
+        var sums = Array(repeating: 0, count: A.count)
         var index = 0
         var min = Double.greatestFiniteMagnitude
         
@@ -475,7 +731,7 @@ class HomeViewController: UIViewController {
             let sum3 = i - 3 < 0 ? 0 : sums[i - 3]
             
             sums[i] = sum + A[i]
-
+            
             if i > 0 {
                 let avg = Double(sums[i] - sum2) / 2
                 if avg < min {
@@ -493,52 +749,52 @@ class HomeViewController: UIViewController {
             }
         }
         return index
-
+        
     }
-
+    
     public func GenomicRangeQuery(_ S : inout String, _ P : inout [Int], _ Q : inout [Int]) -> [Int] {
         // write your code in Swift 4.2.1 (Linux)
         var retArr = [Int]()
-           var chrArr = [Character]()
-
-
-           for chr in S {
-               chrArr.append(chr)
-           }
-
-
-           for i in 0..<P.count {
-
-               var minFactor = 4
-
-               if P[i] - Q[i] == 0 {
-                   if chrArr[P[i]] == "A"{
-                       minFactor = 1
-                   }else if chrArr[P[i]] == "C"{
-                       minFactor = 2
-                   }else if chrArr[P[i]] == "G"{
-                       minFactor = 3
-                   }
-               }else {
-                   for j in P[i]...Q[i] {
-
-                       if chrArr[j] == "A"{
-                           minFactor = 1
-                               break
-                       }else if chrArr[j] == "C"{
-                               minFactor = 2
-                       }else if chrArr[j] == "G"{
-                               if minFactor > 2 {
-                                   minFactor = 3
-                                   }
-                           }
-                       }
-               }
-
-               retArr.append(minFactor)
-           }
-
-           return retArr
+        var chrArr = [Character]()
+        
+        
+        for chr in S {
+            chrArr.append(chr)
+        }
+        
+        
+        for i in 0..<P.count {
+            
+            var minFactor = 4
+            
+            if P[i] - Q[i] == 0 {
+                if chrArr[P[i]] == "A"{
+                    minFactor = 1
+                }else if chrArr[P[i]] == "C"{
+                    minFactor = 2
+                }else if chrArr[P[i]] == "G"{
+                    minFactor = 3
+                }
+            }else {
+                for j in P[i]...Q[i] {
+                    
+                    if chrArr[j] == "A"{
+                        minFactor = 1
+                        break
+                    }else if chrArr[j] == "C"{
+                        minFactor = 2
+                    }else if chrArr[j] == "G"{
+                        if minFactor > 2 {
+                            minFactor = 3
+                        }
+                    }
+                }
+            }
+            
+            retArr.append(minFactor)
+        }
+        
+        return retArr
     }
     public func CountDiv(_ A : Int, _ B : Int, _ K : Int) -> Int {
         // write your code in Swift 4.2.1 (Linux)
@@ -551,10 +807,10 @@ class HomeViewController: UIViewController {
         
         var lastDivident = B - (B % K)
         return (lastDivident-firstDivident)/K + 1
-//        return 0
+        //        return 0
         
     }
-
+    
     func reverseWithSpecial(str: String) -> String {
         var str = "abcd$e"
         let specialChar = "!@#$%^&*"
@@ -589,7 +845,7 @@ class HomeViewController: UIViewController {
         for item in A {
             dict[item] = true
         }
-
+        
         var count = 1
         for item in 1...A.count {
             if dict[item] == nil {
@@ -597,14 +853,14 @@ class HomeViewController: UIViewController {
             }
             count += 1
         }
-
+        
         return count
-/////////////////////////
+        /////////////////////////
         var counter = [Int: Bool]()
         for i in A {
             counter[i] = true
         }
-
+        
         var i = 1
         while true {
             if counter[i] == nil {
@@ -614,7 +870,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
+    
     public func maxCounters(_ N : Int, _ A : [Int]) -> [Int] {
         // write your code in Swift 3.0 (Linux)
         var minElement = 0
@@ -633,26 +889,26 @@ class HomeViewController: UIViewController {
                 minElement = maxElement
             }
         }
-
+        
         for i in 0..<arr.count {
             if arr[i] < minElement {
                 arr[i] = minElement
             }
         }
-
+        
         return arr
     }
-
+    
     public func FrogRiverOne(_ X : Int, _ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         var filledX = Array(repeating: -1, count: X)
-
+        
         for (i, x) in A.enumerated() {
             if x <= X && filledX[x-1] == -1 {
                 filledX[x-1] = i
             }
         }
-
+        
         var maxT = 0
         for x in filledX {
             if x == -1 { // never filled
@@ -662,16 +918,16 @@ class HomeViewController: UIViewController {
                 maxT = max(maxT, x)
             }
         }
-
+        
         return maxT
-
+        
     }
-
+    
     public func TapeEquilibrium(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
-
+        
         let totalT  = A.reduce(0, +)
-
+        
         var leftT = 0
         var rightT = totalT
         var minDif = Int.max
@@ -680,30 +936,30 @@ class HomeViewController: UIViewController {
             let x = A[p]
             leftT += x
             rightT -= x
-
+            
             let dif = abs(leftT - rightT)
             minDif = min(minDif, dif)
         }
         return minDif
     }
-
+    
     public func missingInteger(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
-//       [1,2,3,4,5]
+        //       [1,2,3,4,5]
         var sum = (A.count + 1)*(A.count+2)/2
-
+        
         for item in A {
             sum = sum - item
         }
-
+        
         return sum
     }
     public func frogJump(_ X : Int, _ Y : Int, _ D : Int) -> Int {
         // write your code in Swift 4.2.1 (Linux)
-
+        
         let initial = Y - X
         return Int(ceil(Double(initial)/Double(D)))
-
+        
     }
     func myAnyObject(obj1: Any, obj2: AnyObject) {
         print(obj1,obj2)
@@ -711,10 +967,10 @@ class HomeViewController: UIViewController {
         var myobj1 = 5 as Any
         myobj = "5"
         myobj1 = "5"
-
+        
     }
-//    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-//"(){}[]"
+    //    Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+    //"(){}[]"
     func isValidbrackets(_ s: String) -> Bool {
         var dict = [Character:Character]()
         dict["("] = ")"
@@ -728,13 +984,13 @@ class HomeViewController: UIViewController {
                 if let lastelement = stack.last,lastelement == item {
                     stack.removeLast()
                 } else {
-                        return false
-                    }
+                    return false
                 }
             }
+        }
         return stack.isEmpty
     }
-
+    
     func checkValidParenthesis(_ s: String) -> Bool {
         var star = 0
         var open = 0
@@ -754,55 +1010,55 @@ class HomeViewController: UIViewController {
         if star >= abs(open) {
             return true
         }
-       
+        
         return false
     }
-//    func decodeString(s: String) -> String {
-//        var output = ""
-//        var stackNum = [Int]()
-//        var stackStr = [String]()
-//        var str = ""
-//
-//        for item in s {
-//            if item.isNumber {
-//                for index in
-//            }
-//        }
-//
-//        return output
-//    }
-
+    //    func decodeString(s: String) -> String {
+    //        var output = ""
+    //        var stackNum = [Int]()
+    //        var stackStr = [String]()
+    //        var str = ""
+    //
+    //        for item in s {
+    //            if item.isNumber {
+    //                for index in
+    //            }
+    //        }
+    //
+    //        return output
+    //    }
+    
     func myAtoi(_ s: String) -> String {
         var output = ""
         for (index,item) in s.components(separatedBy: " ").enumerated() {
             print(index,Int(item))
             let decimalChar = CharacterSet.decimalDigits
             let deciRange = item.rangeOfCharacter(from: decimalChar)
-//            let intVal = Int(decimalChar)
-//            if let intVal = Int(item) {
-//                let decimalChar = CharacterSet.decimalDigits
-//                let deciRange = item.rangeOfCharacter(from: decimalChar)
-//                let val = Double(intVal) * 0.8
-//                output.append(String(val))
-//                output.append(" ")
-//            } else {
-//                output.append(item)
-//                output.append(" ")
-//            }
+            //            let intVal = Int(decimalChar)
+            //            if let intVal = Int(item) {
+            //                let decimalChar = CharacterSet.decimalDigits
+            //                let deciRange = item.rangeOfCharacter(from: decimalChar)
+            //                let val = Double(intVal) * 0.8
+            //                output.append(String(val))
+            //                output.append(" ")
+            //            } else {
+            //                output.append(item)
+            //                output.append(" ")
+            //            }
         }
         return output
-        }
+    }
     func perfectCity(departure: [Double], destination: [Double]) -> Double {
         let depart = departure.first! - departure.last!
         let desti = destination.first! - destination.last!
         let sum = depart + desti
         return sum
     }
-
-//    For a = [1, 4, 2, 1, 7, 6], the output should be
-//    nearestGreater(a) = [1, 4, 1, 2, -1, 4].
-
-
+    
+    //    For a = [1, 4, 2, 1, 7, 6], the output should be
+    //    nearestGreater(a) = [1, 4, 1, 2, -1, 4].
+    
+    
     func nearestGreater(a: [Int]) -> [Int] {
         var output = [Int]()
         for (index,item) in a.enumerated() {
@@ -840,7 +1096,7 @@ class HomeViewController: UIViewController {
         }
         return output
     }
-
+    
     func fareEstimator(ride_time: Int, ride_distance: Int, cost_per_minute: [Double], cost_per_mile: [Double]) -> [Double] {
         var cost = [Double]()
         for (index,costMin) in cost_per_minute.enumerated() {
@@ -851,7 +1107,7 @@ class HomeViewController: UIViewController {
         }
         return cost
     }
-
+    
     func nextLarger(a: [Int]) -> [Int] {
         var arr = Array(repeating: -1, count: a.count)
         for (index,item) in a.enumerated() {
@@ -867,17 +1123,17 @@ class HomeViewController: UIViewController {
         }
         return arr
     }
-
+    
     // simplifyPath(path) = "/home/a/b/c".
- 
+    
     func simplifyPath(path: String) -> String {
         var path = path
         if path.hasSuffix("/") {
             path.removeLast()
         }
         path = path.replacingOccurrences(of: "//", with: "")
-//        path = path.replacingOccurrences(of: "../", with: "")
-//        path = path.1`    `replacingOccurrences(of: "./", with: "")
+        //        path = path.replacingOccurrences(of: "../", with: "")
+        //        path = path.1`    `replacingOccurrences(of: "./", with: "")
         if path.contains("..") {
             let index = path.range(of: "..")
             print(index)
@@ -888,7 +1144,7 @@ class HomeViewController: UIViewController {
         let strArr = Array(s)
         var newStr = ""
         var prev = ""
-
+        
         for char in strArr {
             if char.isUppercase {
                 newStr.append(prev)
@@ -923,16 +1179,16 @@ class HomeViewController: UIViewController {
         }
         return "_"
     }
-//    for (int i = 0; i < size; i++)
-//        {
-//            max_ending_here = max_ending_here + a[i];
-//            if (max_so_far < max_ending_here)
-//                max_so_far = max_ending_here;
-//
-//            if (max_ending_here < 0)
-//                max_ending_here = 0;
-//        }
-//        return max_so_far;
+    //    for (int i = 0; i < size; i++)
+    //        {
+    //            max_ending_here = max_ending_here + a[i];
+    //            if (max_so_far < max_ending_here)
+    //                max_so_far = max_ending_here;
+    //
+    //            if (max_ending_here < 0)
+    //                max_ending_here = 0;
+    //        }
+    //        return max_so_far;
     func arrayMaxConsecutiveSum2(inputArray: [Int]) -> Int {
         guard var max = inputArray.first else {
             return 0
@@ -943,7 +1199,7 @@ class HomeViewController: UIViewController {
     
     func sumInRange(nums: [Int], queries: [[Int]]) -> Int {
         let modulus = 1_000_000_000 + 7
-
+        
         func sumRange(range: [Int]) -> Int {
             let firstInd = range.first!
             let last = range.last!
@@ -957,7 +1213,7 @@ class HomeViewController: UIViewController {
         let result = count % modulus
         return result >= 0 ? result : result + modulus
     }
-
+    
     func sumOfTwo(a: [Int], b: [Int], v: Int) -> Bool {
         let setA = Set(a)
         for item in setA {
@@ -968,7 +1224,7 @@ class HomeViewController: UIViewController {
         return false
     }
     
-
+    
     func firstDuplicate(a: [Int]) -> Int {
         var a = a
         for i in 0..<a.count {
@@ -981,22 +1237,22 @@ class HomeViewController: UIViewController {
         return -1
         
     }
-
+    
     func superViewAndSuper() {
         let viewA = ViewA()
-
+        
         let viewB = ViewB()
         let viewc = ViewC()
         let viewd = ViewD()
         viewA.addSubview(viewB)
-
+        
         func matchSuper(view1: UIView, view2: UIView) -> Bool {
-//            func getAllSuper(myView: UIView) -> [UIView] {
-//                var myView = myView
-//                while <#condition#> {
-//                    <#code#>
-//                }
-//            }
+            //            func getAllSuper(myView: UIView) -> [UIView] {
+            //                var myView = myView
+            //                while <#condition#> {
+            //                    <#code#>
+            //                }
+            //            }
             var class1: UIView? = view1
             while class1 != nil {
                 print(class1)
@@ -1012,7 +1268,7 @@ class HomeViewController: UIViewController {
             return false
         }
         print(matchSuper(view1: viewc, view2: viewd))
-
+        
         return
         
         let user = User(name: "rahul", age: 10)
@@ -1030,7 +1286,7 @@ class HomeViewController: UIViewController {
         }
         return
     }
-
+    
     func findDuplicateString(_ str: String) {
         var str1 = str
         var duplicateStr = ""
@@ -1046,14 +1302,14 @@ class HomeViewController: UIViewController {
         
         
         
-//        for (index,item) in str1.enumerated() {
-//            for index2 in index+1..<str1.count {
-//                if item == str1[index2] {
-//                    duplicate.insert(String(item))
-//                }
-//            }
-//        }
-//        print(duplicate)
+        //        for (index,item) in str1.enumerated() {
+        //            for index2 in index+1..<str1.count {
+        //                if item == str1[index2] {
+        //                    duplicate.insert(String(item))
+        //                }
+        //            }
+        //        }
+        //        print(duplicate)
     }
     
     func selectionSort() {
@@ -1083,7 +1339,7 @@ class HomeViewController: UIViewController {
             }
         }
         print(arr)
-
+        
     }
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         // var output = [Int]()
@@ -1150,7 +1406,7 @@ class HomeViewController: UIViewController {
         return output
     }
     func removeDuplicates(_ nums: inout [Int]) -> Int {
-       var index = 0
+        var index = 0
         while index < nums.count {
             if index > 0, nums[index] == nums[index - 1]{
                 nums.remove(at: index)
@@ -1293,35 +1549,35 @@ class HomeViewController: UIViewController {
             }
         }
         return output.count
-//        var characterDict = [Character:Int]()
-//        var maxLength = 0
-//        var lastRepeatPos = -1
-//        var i = 0
-//
-//        for c in s {
-//            if (characterDict[c] != nil) && (characterDict[c]! > lastRepeatPos) {
-//                lastRepeatPos = characterDict[c]!
-//            }
-//
-//            maxLength = max(i - lastRepeatPos, maxLength)
-//            characterDict[c] = i
-//            i += 1
-//        }
-//
-//        return maxLength
+        //        var characterDict = [Character:Int]()
+        //        var maxLength = 0
+        //        var lastRepeatPos = -1
+        //        var i = 0
+        //
+        //        for c in s {
+        //            if (characterDict[c] != nil) && (characterDict[c]! > lastRepeatPos) {
+        //                lastRepeatPos = characterDict[c]!
+        //            }
+        //
+        //            maxLength = max(i - lastRepeatPos, maxLength)
+        //            characterDict[c] = i
+        //            i += 1
+        //        }
+        //
+        //        return maxLength
     }
-//    Symbol       Value
-//    I             1
-//    V             5
-//    X             10
-//    L             50
-//    C             100
-//    D             500
-//    M             1000
+    //    Symbol       Value
+    //    I             1
+    //    V             5
+    //    X             10
+    //    L             50
+    //    C             100
+    //    D             500
+    //    M             1000
     
     func romanToInt(_ s: String) -> Int {
         func charToRoman(_ char: Character) -> Int {
-        let char = char
+            let char = char
             switch char {
             case "I":
                 return 1
@@ -1360,19 +1616,19 @@ class HomeViewController: UIViewController {
         
         return result
         
-
+        
     }
-//    To convert CDA,
-//    3*26*26 + 4*26 + 1
+    //    To convert CDA,
+    //    3*26*26 + 4*26 + 1
     // index*(value,pow,index-1)
-//    public int titleToNumber(String s) {
-//            char[] chars = s.toCharArray();
-//            int res = 0;
-//            for (int i = 0; i < chars.length; i++){
-//                res = res * 26 + chars[i] - 'A' + 1;
-//            }
-//            return res;
-//        }
+    //    public int titleToNumber(String s) {
+    //            char[] chars = s.toCharArray();
+    //            int res = 0;
+    //            for (int i = 0; i < chars.length; i++){
+    //                res = res * 26 + chars[i] - 'A' + 1;
+    //            }
+    //            return res;
+    //        }
     func titleToNumber(_ s: String) -> Int {
         func getInteger(_ char: Character) -> Int {
             let tempint = char.asciiValue
@@ -1390,26 +1646,26 @@ class HomeViewController: UIViewController {
         for (index,_) in prices.enumerated() {
             
             if index > 0 {
-               let profitloss = prices[index] - prices[index - 1]
+                let profitloss = prices[index] - prices[index - 1]
                 if profitloss > 0 {
                     maxProf += profitloss
                 }
             }
             
         }
-            return maxProf
-        }
+        return maxProf
+    }
     
     func moveZeroes(_ nums: inout [Int]) {
         var zeros = nums.count
         var output = [Int]()
-//        for item in nums {
-//            if item != 0 {
-//                output.append(item)
-//            } else {
-//                zeros += 1
-//            }
-//        }
+        //        for item in nums {
+        //            if item != 0 {
+        //                output.append(item)
+        //            } else {
+        //                zeros += 1
+        //            }
+        //        }
         nums = nums.filter({$0 != 0})
         for _ in nums.count-1..<zeros-1 {
             output.append(0)
@@ -1437,14 +1693,14 @@ class HomeViewController: UIViewController {
     }
     
     func majorityElement(_ nums: [Int]) -> Int {
-           var numDict = [Int: Int]()
-           for item in nums {
-               if let count = numDict[item] {
-                   numDict[item] = count + 1
-               } else {
-                   numDict[item] = 1
-               }
-           }
+        var numDict = [Int: Int]()
+        for item in nums {
+            if let count = numDict[item] {
+                numDict[item] = count + 1
+            } else {
+                numDict[item] = 1
+            }
+        }
         var maxNumDict = (key: 0, val: 0)
         for (key,value) in numDict {
             print(key,value)
@@ -1453,7 +1709,7 @@ class HomeViewController: UIViewController {
             }
         }
         return maxNumDict.key
-       }
+    }
     
     func singleNumber(_ nums: [Int]) -> Int {
         var output = Set<Int>()
@@ -1474,17 +1730,12 @@ class HomeViewController: UIViewController {
         print(myString)
     }
     func reverse(_ s: String) -> String {
-     var str = ""
-     //.characters gives the character view of the string passed. You can think of it as array of characters.
-     for character in s {
-        str = "\(character)" + str
-        //This will help you understand the logic.
-        //!+""
-        //p+!
-        //l+p! ... goes this way
-        print ( str)
-     }
-     return str
+        var str = ""
+        //.characters gives the character view of the string passed. You can think of it as array of characters.
+        for character in s {
+            str = "\(character)" + str
+        }
+        return str
     }
     func reverseString(_ s: inout [Character]) {
         var output = [Character]()
@@ -1493,15 +1744,15 @@ class HomeViewController: UIViewController {
         }
         s = output
         print(s)
-
-       }
+        
+    }
     func sortBubble() {
         var numbers = [1, 12, 5, 111, 200, 1000, 10]
-
+        
         for index in 0..<numbers.count {
-        //    print(index)
+            //    print(index)
             for index2 in index..<numbers.count {
-//                print(index2)
+                //                print(index2)
                 if numbers[index] > numbers[index2] {
                     let tmp = numbers[index]
                     numbers[index] = numbers[index2]
@@ -1511,5 +1762,5 @@ class HomeViewController: UIViewController {
         }
         print(numbers)
     }
-   
+    
 }
