@@ -53,8 +53,9 @@ class HomeViewController: UIViewController {
         //        print(isAnagram(s,t))
         //        var input = [0,1,0,3,12]
         //        moveZeroes(&input)
-        //        let prices = [7,1,5,3,6,4] //7
-        //        print(maxProfit(prices))
+                var prices = [23171, 21011, 21123, 21366, 21013, 21367] //7
+//                print(maxProfit(prices))
+        print(MaxProfit(&prices))
         //        print(titleToNumber("AB"))
         //        romanToInt("LVIII")
         //        lengthOfLongestSubstring("ohomm")
@@ -69,7 +70,7 @@ class HomeViewController: UIViewController {
         //        var input = [0,0,1,1,1,2,2,3,3,4]
         //        print(removeDuplicates(&input))
         //        print(plusOne([1,2,3]))
-        print(climbStairs(9))
+//        print(climbStairs(9))
         //        var nums1 = [1,2,3,0,0,0]
         //        merge(&nums1, 3, [2,5,6], 3)
         //        selectionSort()
@@ -184,14 +185,178 @@ class HomeViewController: UIViewController {
         //        print(canMakeTriangle(arr: arr))
         
         //        let number = "456"
-        let number = "6666"
+//        let number = "6666"
         //        print(threeDivSubsequences(number: number))
         
         //        print(getStringAllSubstring(str: "456"))
         //        var A = [1, 3, 6, 4, 1, 2]
         //        print(solution(&A))
+//        print(Nesting("())"))
+//        var arr = [3, 4, 3, 2, 3, -1, 3, 3]
+//        print(Dominator(&arr))
+//        var test = [4, 3, 4, 4, 4, 2]
+//        print(EquiLeader(&test))
+        var test = [3, 2, 6, -1, 4, 5, -1, 2]
+        print(MaxDoubleSliceSum(&test))
+    }
+    // View Load End
+    
+    public func MaxProfit(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var maxProf = 0
+        
+        for (index,_) in A.enumerated() {
+            
+            if index > 0 {
+                let profitloss = A[index] - A[index - 1]
+                print(profitloss)
+                if profitloss > 0, maxProf < profitloss {
+                    maxProf = profitloss
+                }
+            }
+            
+        }
+        return maxProf
+    }
+
+    public func MaxDoubleSliceSum(_ A : inout [Int]) -> Int {
+        if A.count < 4 {
+            return 0
+        }
+        var sum = 0
+        var slice = 0
+        var mini = Int.max
+        A[A.count - 1] = 0
+        let pairs = Array(zip(Array(0..<A.count), A))
+
+        for (index, item) in pairs[1..<A.count-1] {
+            if sum + item > 0 {
+                if index + 1 < A.count {
+                    sum = max(0, sum) + item
+                } else {
+                    sum = sum + item
+                }
+                slice = max(sum,slice)
+            } else {
+                sum = item
+            }
+            mini = min(mini, item)
+        }
+        return slice - mini
+    }
+    func getLeaderDict(_ A : [Int]) -> [Int:Int] {
+        let mappedItems = A.map { ($0, 1) }
+        let dictcounts = Dictionary(mappedItems, uniquingKeysWith: +)
+        return dictcounts
+    }
+    public func EquiLeader(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var candidate = 0
+        
+        var count = 0
+        
+        for i in A {
+            if count == 0 {
+                candidate = i
+            }
+            if candidate == i {
+                count += 1
+            } else {
+                count -= 1
+            }
+        }
+        
+        count = 0
+        
+        for i in A {
+            if i == candidate {
+                count += 1
+            }
+        }
+        
+        var equiLeaders = 0
+        
+        var leftLeaders = 0
+        
+        var rightLeaders = count
+        
+        for i in 0..<A.count {
+            if A[i] == candidate {
+                leftLeaders += 1
+                rightLeaders -= 1
+            }
+            
+            if leftLeaders > (i + 1) / 2 && rightLeaders > (A.count - i - 1) / 2 {
+                equiLeaders += 1
+            }
+        }
+        
+        return equiLeaders
+    }
+    func getLeader(_ A : inout [Int]) -> Int {
+        var dict = [Int: Int]()
+        for item in A {
+            if let value = dict[item] {
+                let itemCount = value + 1
+                dict[item] = itemCount
+            } else {
+                dict[item] = 1
+            }
+        }
+        var maximumV:(key:Int,value:Int) = (0,0)
+        for item in dict {
+            if item.value > maximumV.value {
+                maximumV = item
+            }
+        }
+        return maximumV.key
+    }
+    public func Dominator(_ A : inout [Int]) -> Int {
+//        leaders
+        // write your code in Swift 4.2.1 (Linux)
+        var dict = [Int: Int]()
+        for (_,item) in A.enumerated() {
+            if let value = dict[item] {
+                let itemCount = value + 1
+                dict[item] = itemCount
+            } else {
+                dict[item] = 1
+            }
+        }
+        var domValue = Int(Double(A.count) * 0.5)
+        var dom = -1
+        for i in dict.keys {
+            if let value = dict[i], value > domValue {
+                dom = i
+                domValue = value
+            }
+        }
+        return A.index(of: dom) ?? -1
     }
     
+    public func StoneWall(_ H : inout [Int]) -> Int {
+        // write your code in Swift 2.2
+        var counter = 0
+        var stack = [Int]()
+        for i in H {
+            var height = stack.last ?? 0
+            if i < height {
+                repeat {
+                    stack.removeLast()
+                    height = stack.last ?? 0
+                } while height > i
+                if i > height {
+                    counter += 1
+                    stack.append(i)
+                }
+            } else if i > height {
+                counter += 1
+                stack.append(i)
+            }
+        }
+        return counter
+        
+    }
     
     func subarraysFilter(_ arr: [Int]) -> [[Int]] {
         var result: [[Int]] = [[]]
@@ -991,6 +1156,28 @@ class HomeViewController: UIViewController {
         return stack.isEmpty
     }
     
+    func Nesting(_ S: String) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        //        let dictStr = ["[": "]", "(":")","{":"}"]
+        var stack = ""
+        for item in S{
+            switch item {
+            case "(":
+                stack.append(item)
+            case ")":
+                print(item)
+                if stack.last == "(" {
+                    stack.removeLast()
+                } else {
+                    return 0
+                }
+            default:
+                break
+            }
+        }
+        return stack.isEmpty ? 1 : 0
+    }
+    
     func checkValidParenthesis(_ s: String) -> Bool {
         var star = 0
         var open = 0
@@ -1425,7 +1612,7 @@ class HomeViewController: UIViewController {
         mapPre["["] = "]"
         var stack = [Character]()
         for item in s {
-            if let oneelement = mapPre[item] {
+            if mapPre[item] != nil {
                 stack.append(item)
                 if stack.count > 1 {
                     return false
