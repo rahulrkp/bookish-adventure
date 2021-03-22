@@ -196,10 +196,63 @@ class HomeViewController: UIViewController {
 //        print(Dominator(&arr))
 //        var test = [4, 3, 4, 4, 4, 2]
 //        print(EquiLeader(&test))
-        var test = [3, 2, 6, -1, 4, 5, -1, 2]
-        print(MaxDoubleSliceSum(&test))
+//        var test = [3, 2, 6, -1, 4, 5, -1, 2]
+//        print(MaxDoubleSliceSum(&test))
+//        let arr1 = [-1,2]
+//        let arr2 = [1,2,3,4]
+//        print(addNum(array1: arr1, array2: arr2))
+        var str = "Codility We test coders"
+        print(cropStr(&str, 14))
     }
     // View Load End
+    
+     func cropStr(_ message : inout String, _ K : Int) -> String {
+        // write your code in Swift 4.2.1 (Linux)
+        let messageLength = message.count
+        if messageLength <= K {
+            return message
+        }
+        var output = ""
+        for (index,str) in message.enumerated() {
+            if index == K {
+                if str != " " {
+                    output = output.components(separatedBy: " ").dropLast().joined(separator: " ")
+                }
+                break
+            } else {
+                output.append(str)
+            }
+        }
+        return output
+    }
+
+    func addNum(array1: [Int], array2: [Int]) -> [Int] {
+        // start here
+        if array1.count < 1 {
+            return array2
+        } else if array2.count < 1 {
+            return array1
+        }
+        var maxArrcount = array1.count
+        if array2.count > maxArrcount {
+            maxArrcount = array2.count
+        }
+        var output = [Int]()
+        for index in 0..<maxArrcount {
+            var item1 = 0
+            if index < array1.count {
+                item1 = array1[index]
+            }
+            var item2 = 0
+            if index < array2.count {
+                item2 = array2[index]
+            }
+            let sum = abs(item1) + abs(item2)
+            output.append(sum)
+        }
+        
+        return output
+    }
     
     public func MaxProfit(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
