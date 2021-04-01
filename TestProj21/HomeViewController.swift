@@ -201,10 +201,67 @@ class HomeViewController: UIViewController {
 //        let arr1 = [-1,2]
 //        let arr2 = [1,2,3,4]
 //        print(addNum(array1: arr1, array2: arr2))
-        var str = "Codility We test coders"
-        print(cropStr(&str, 14))
+//        var str = "Codility We test coders"
+//        print(cropStr(&str, 14))
+//        let a1 = [8, 5, 6, 16, 5]
+//        let l = 1
+//        let r = 3
+//        print(boundedRatio(a: a1, l: l, r: r))
+//        let pattern = "010"
+//        let s = "amazing"
+//        print(binaryPatternMatching1(pattern: pattern, s: s))
+//        let a2 = [25, 35, 872, 228, 53, 278, 872]
+//        print(digitAnagrams(a: a2))
+//        let arr = [1,12,-5,-6,50,3], k = 4
+//        print(findMaxAverage(arr, k))
+        
     }
-    // View Load End
+    
+    func digitAnagrams(a: [Int]) -> Int64 {
+        
+        var output = 0
+        for (index,item) in a.enumerated(){
+            let str1 = String(item).sorted()
+            for index1 in index+1..<a.count {
+                let str2 = String(a[index1]).sorted()
+                if String(str1).contains(String(str2)) {
+                    output += 1
+                }
+            }
+        }
+        return Int64(output)
+    }
+    
+    func binaryPatternMatching1(pattern: String, s: String) -> Int {
+        let vowel = ["a","e","i","o","u","y"]
+        var output = 0
+        for index in 0..<s.count-pattern.count{
+            for indexP in 0..<pattern.count{
+                let matchp = pattern[pattern.index(pattern.startIndex , offsetBy: indexP)]
+                let match = s[s.index(s.startIndex, offsetBy: index+indexP)]
+                if matchp == "0" && vowel.contains(String(matchp)) {
+                    output += 1
+                } else if matchp == "1" && !vowel.contains(String(matchp)) {
+                    output += 1
+                }
+            }
+        }
+        return output
+    }
+    
+    func boundedRatio(a: [Int], l: Int, r: Int) -> [Bool] {
+        var output = [Bool]()
+        for (index,item) in a.enumerated(){
+            let x = Double(item)/Double(index+1)
+            if x == floor(x) && x<=Double(r) && x>=Double(l) {
+                output.append(true)
+            } else {
+                output.append(false)
+            }
+        }
+        return output
+    }
+
     
      func cropStr(_ message : inout String, _ K : Int) -> String {
         // write your code in Swift 4.2.1 (Linux)
@@ -213,14 +270,19 @@ class HomeViewController: UIViewController {
             return message
         }
         var output = ""
+        var previousWord = ""
         for (index,str) in message.enumerated() {
             if index == K {
                 if str != " " {
-                    output = output.components(separatedBy: " ").dropLast().joined(separator: " ")
+                    break
                 }
-                break
             } else {
-                output.append(str)
+                if str == " " {
+                    output = output + " " + previousWord
+                    previousWord = ""
+                } else {
+                    previousWord.append(str)
+                }
             }
         }
         return output
@@ -727,23 +789,23 @@ class HomeViewController: UIViewController {
         return Array(maxArr.keys).sorted(by: <)
     }
     
-    func boundedRatio(a: [Int], l: Int, r: Int) -> [Bool] {
-        var x: Int
-        var out = Array(repeating: false, count: a.count)
-        for i in 0..<a.count {
-            if Int(a[i]) % (i + 1) == 0 {
-                x = Int(a[i]) / (i + 1)
-                if x >= l && x <= r {
-                    out[i] = true
-                } else {
-                    out[i] = false
-                }
-            } else {
-                out[i] = false
-            }
-        }
-        return out
-    }
+//    func boundedRatio(a: [Int], l: Int, r: Int) -> [Bool] {
+//        var x: Int
+//        var out = Array(repeating: false, count: a.count)
+//        for i in 0..<a.count {
+//            if Int(a[i]) % (i + 1) == 0 {
+//                x = Int(a[i]) / (i + 1)
+//                if x >= l && x <= r {
+//                    out[i] = true
+//                } else {
+//                    out[i] = false
+//                }
+//            } else {
+//                out[i] = false
+//            }
+//        }
+//        return out
+//    }
     
     public func FishRiver(_ A : inout [Int], _ B : inout [Int]) -> Int {
         // write your code in Swift 2.2
@@ -1035,15 +1097,17 @@ class HomeViewController: UIViewController {
         var strArr = Array(str)
         let count = str.count
         for index in 0..<strArr.count/2 {
+            let oneCh = strArr[1]
+            print(oneCh.isNumber)
             if !specialChar.contains(strArr[index]) && !specialChar.contains(strArr[str.count-1-index]) {
                 let temp = strArr[index]
                 strArr[index] = strArr[str.count-1-index]
                 strArr[str.count-1-index] = temp
             }
         }
-        
         return String(strArr)
     }
+    
     public func sequence(_ A : inout [Int]) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         var dict = [Int: Bool]()

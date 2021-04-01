@@ -35,61 +35,44 @@ enum MyFColor: Float {
 
 class ClosursViewController: UIViewController {
 
-    fileprivate func removeKFromList(l: ListNode<Int>?, k: Int) -> ListNode<Int> {
-        var current: ListNode? = l
-        let head = current!
-        var prev = current
-        while current != nil {
-            if current?.value == k {
-                prev?.next = current?.next
-            }
-            current = current?.next
-            prev = current
-        }
-        return head
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let noinout = {print("no in out")}
+        noinout()
+        
+        let divide = {(a:Int,b:Int)->Int in
+            return a/b
+        }
+        print(divide(6,2))
 
-//        let clos = { (input) -> Int in
-//            statement
-//        }
-        let str = { print("welcome")}
-        str()
-        
-        let devideC = { (val1: Int, val2: Int) -> Int in
-            return val1/val2
+        let clousur: (Int, Int) -> Int = {(num1,num2) -> Int in
+            return num1 + num2
         }
-        print(devideC(4, 2))
+        let addResult = clousur(3, 6)
+        print(addResult)
         
-        func strAccend(string1: String, string2: String) -> Bool {
-            string1 < string2
+        let sortHand: (Int,Int) -> Int = {
+            return $0 + $1
         }
-        print(strAccend(string1: "a", string2: "b"))
-            
-        let sum = {(val1: Int, val2: Int) -> Int in
-            return val1 + val2
-        }
-        print(sum(4,6))
+        print(sortHand(4,7))
         
-        var count:[Int] = [5, 10, -6, 75, 20]
-        let decend = count.sorted { (a, b) -> Bool in
-            a > b
+        let superSort: (Int,Int)->Int = {$0+$1}
+        print(superSort(5,4))
+
+        let inferC1 = {(a:Int,b:Int) -> Int in
+            return a*b
         }
-        let assend = count.sorted { (a, b) -> Bool in
-            a < b
-        }
+        print(inferC1(4,3))
         
-        print(decend)
-        print(assend)
-        
-        let color = MyFColor.redcolor
-        self.view.backgroundColor = color.mycolor
+        let cl2 = {"I am cl"}
+        let cl21 = {"I am cl"}()
+        print(cl2())
+        print(cl21)
     }
-    
-    func backward(_ str1: String, _ str2: String) -> Bool {
-        return str1 < str2
+    func closureDivi(cdivid: (_ a:Int,_ b:Int) -> Int) {
+        let div = cdivid
+        let result = div(1,1)
+        print(result)
     }
 
     /*
