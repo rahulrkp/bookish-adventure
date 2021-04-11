@@ -98,8 +98,8 @@ class HomeViewController: UIViewController {
         //        nextLarger(a: a)
         //        let a = [1, 4, 2, 1, 7, 6]
         //        nearestGreater(a: a)
-        let departure = [2.4, 1]
-        let destination = [5, 7.3]
+        _ = [2.4, 1]
+        _ = [5, 7.3]
         //        print(perfectCity(departure: departure, destination: destination))
         //        let s = "John has USD 300. Mary borrowed USD 75 from him."
         //        print(myAtoi(s))
@@ -138,8 +138,8 @@ class HomeViewController: UIViewController {
         //        var arr = [10, 50, 5, 1]//, 1, 8, 20]
         //        print(Triangle(&arr))
         
-        var a = [4, 3, 2, 1, 5], b = [0, 1, 0, 0, 0]
-        print(FishRiver(&a, &b))
+//        var a = [4, 3, 2, 1, 5], b = [0, 1, 0, 0, 0]
+//        print(FishRiver(&a, &b))
         
         //        You are given three arrays of integers a, b, and c. Your task is to find the longest contiguous subarray of a containing only elements that appear in b but do not appear in c.
         //        var a = [2, 1, 7, 1, 1, 5, 3, 5, 2, 1, 1, 1], b = [1, 3, 5], c = [2, 3]
@@ -172,7 +172,6 @@ class HomeViewController: UIViewController {
         //        print(cherryPickup(grid))
         //      let   pattern = "010" , s = "amazing"
         //        print(binaryPatternMatching(pattern: pattern, s: s))
-        let s1 = "super", s2 = "tower"
         
         //       let m = [[1, 0, 1, 5, 6],
         //             [3, 3, 0, 3, 3],
@@ -214,15 +213,110 @@ class HomeViewController: UIViewController {
 //        print(digitAnagrams(a: a2))
 //        let arr = [1,12,-5,-6,50,3], k = 4
 //        print(findMaxAverage(arr, k))
+//        let arr = [-2,1,-3,4,-1,2,1,-5,4]
+//        maxSubArray(arr)
+//        let coins = [186,419,83,408]
+//        , amount = 6249
+//        print(coinChange(coins, amount))
+//        let a = [1, 2, 3], b = [1, 2, 3]
+//        let k = 31
+//        print(countTinyPairs(a: a, b: b, k: k))
+//
+//        let s1 = "super", s2 = "tower"
+//        print(mergeStrings(s1: s1, s2: s2))
+        let events = [["John_0","out"]]//[["John_0","in"],
+//                      ["Mary_0","in"],
+//                      ["John_0","out"],
+//                      ["Mary_0","out"]]
+        print(shopInAndOutEvents(events: events))
+    }
+    
+    func shopInAndOutEvents(events: [[String]]) -> Bool {
+        var userDict = [String: String]()
+        for item in events {
+            let key = item[0]
+            let value = item[1]
+            if value == "in" {
+                if let dictValue = userDict[key], dictValue == "in" {
+                    return false
+                } else {
+                    userDict[key] = value
+                }
+
+            } else if value == "out" {
+                if (userDict[key] == nil) {
+                    return false
+                }
+                if let dictValue = userDict[key], dictValue == "out" {
+                    return false
+                } else {
+                    userDict.removeValue(forKey: key)
+                }
+            }
+        }
+        return userDict.values.isEmpty
         
     }
     
+    func mergeStrings(s1: String, s2: String) -> String {
+        
+        return ""
+    }
+    
+    func countTinyPairs(a: [Int], b: [Int], k: Int) -> Int {
+        let ArrCount = a.count
+        var output = 0
+        for index in 0..<ArrCount {
+            let itemA = a[index]
+            let itemB = b[ArrCount - 1 - index]
+            print(itemA,itemB)
+            let ab = Int("\(itemA)\(itemB)")
+            if ab! < k {
+                output += 1
+            }
+        }
+        return output
+    }
+
+    func coinChange(_ coins: [Int], _ amount: Int) -> Int {
+        let coins = coins.sorted(by: >)
+        var count = 0
+        var target = amount
+        for item in coins {
+            if target > item {
+                count = count + target/item
+                target = target % item //1
+                if target == 0 {
+                    return count
+                }
+            }
+        }
+        return -1
+    }
+    
+    func maxSubArray(_ nums: [Int]) -> Int {
+        var output = Int.min
+        var subArr: [[Int]] = [[]]
+        for index in 0..<nums.count {
+            for index1 in index..<nums.count {
+                let arrOne = nums[index...index1]
+                subArr.append(Array(arrOne))
+                let sum = arrOne.reduce(0, +)
+                if sum > output {
+                    output = sum
+                }
+            }
+        }
+       
+        print(subArr)
+        return output
+    }
     func digitAnagrams(a: [Int]) -> Int64 {
         
         var output = 0
         for (index,item) in a.enumerated(){
             let str1 = String(item).sorted()
-            for index1 in index+1..<a.count {
+            for index1 in index..<a.count {
                 let str2 = String(a[index1]).sorted()
                 if String(str1).contains(String(str2)) {
                     output += 1
@@ -238,7 +332,7 @@ class HomeViewController: UIViewController {
         for index in 0..<s.count-pattern.count{
             for indexP in 0..<pattern.count{
                 let matchp = pattern[pattern.index(pattern.startIndex , offsetBy: indexP)]
-                let match = s[s.index(s.startIndex, offsetBy: index+indexP)]
+                _ = s[s.index(s.startIndex, offsetBy: index+indexP)]
                 if matchp == "0" && vowel.contains(String(matchp)) {
                     output += 1
                 } else if matchp == "1" && !vowel.contains(String(matchp)) {
@@ -263,7 +357,7 @@ class HomeViewController: UIViewController {
     }
 
     
-     func cropStr(_ message : inout String, _ K : Int) -> String {
+     func cropStr(_ message : inout String, _ K : Int) -> String { // test1 USB
         // write your code in Swift 4.2.1 (Linux)
         let messageLength = message.count
         if messageLength <= K {
@@ -287,8 +381,8 @@ class HomeViewController: UIViewController {
         }
         return output
     }
-
-    func addNum(array1: [Int], array2: [Int]) -> [Int] {
+    
+    func addNum(array1: [Int], array2: [Int]) -> [Int] { //test2 USB
         // start here
         if array1.count < 1 {
             return array2
@@ -565,17 +659,12 @@ class HomeViewController: UIViewController {
     //        return [0]
     //    }
     
-    func mergeStrings(s1: String, s2: String) -> String {
-        
-        return ""
-    }
-    
     func binaryPatternMatching(pattern: String, s: String) -> Int {
         let patterArr = Array(pattern) // [0,1,0]
         let wovel = ["a","e","i","o","u","y"]
         
         func isMatcing(_ strtemp: String) -> Bool {
-            var strArr = Array(strtemp)
+            let strArr = Array(strtemp)
             for (index,item) in strArr.enumerated() {
                 if wovel.contains(String(item)) && (patterArr[index] != "0") {
                     return false
@@ -601,7 +690,7 @@ class HomeViewController: UIViewController {
     func cherryPickup(_ grid: [[Int]]) -> Int {
         var count = 0
         for arr in grid {
-            for (index,item) in arr.enumerated() {
+            for (_,item) in arr.enumerated() {
                 print(item)
                 if item == 1 {
                     count += 1
@@ -622,7 +711,7 @@ class HomeViewController: UIViewController {
         var temp = str + "?"
         str += reverse(str)
         temp += str
-        var n = temp.count
+        let n = temp.count
         var lps = Array(repeating: 0, count: n)
         
         for i in 1..<n {
@@ -1079,23 +1168,23 @@ class HomeViewController: UIViewController {
     public func CountDiv(_ A : Int, _ B : Int, _ K : Int) -> Int {
         // write your code in Swift 4.2.1 (Linux)
         //   let A = 6, B = 11 , K = 2
-        var index = A
+        _ = A
         var firstDivident = A
         if A % K != 0 {
             firstDivident = A + (K - A%K)
         }
         
-        var lastDivident = B - (B % K)
+        let lastDivident = B - (B % K)
         return (lastDivident-firstDivident)/K + 1
         //        return 0
         
     }
     
     func reverseWithSpecial(str: String) -> String {
-        var str = "abcd$e"
+        let str = "abcd$e"
         let specialChar = "!@#$%^&*"
         var strArr = Array(str)
-        let count = str.count
+        _ = str.count
         for index in 0..<strArr.count/2 {
             let oneCh = strArr[1]
             print(oneCh.isNumber)
@@ -1260,7 +1349,7 @@ class HomeViewController: UIViewController {
         dict["["] = "]"
         var stack = [Character]()
         for item in s {
-            if let isOpen = dict[item] {
+            if dict[item] != nil {
                 stack.append(item)
             } else {
                 if let lastelement = stack.last,lastelement == item {
@@ -1333,11 +1422,11 @@ class HomeViewController: UIViewController {
     //    }
     
     func myAtoi(_ s: String) -> String {
-        var output = ""
+        let output = ""
         for (index,item) in s.components(separatedBy: " ").enumerated() {
             print(index,Int(item))
             let decimalChar = CharacterSet.decimalDigits
-            let deciRange = item.rangeOfCharacter(from: decimalChar)
+            _ = item.rangeOfCharacter(from: decimalChar)
             //            let intVal = Int(decimalChar)
             //            if let intVal = Int(item) {
             //                let decimalChar = CharacterSet.decimalDigits
@@ -1494,7 +1583,7 @@ class HomeViewController: UIViewController {
     //        }
     //        return max_so_far;
     func arrayMaxConsecutiveSum2(inputArray: [Int]) -> Int {
-        guard var max = inputArray.first else {
+        guard inputArray.first != nil else {
             return 0
         }
         
@@ -1592,11 +1681,11 @@ class HomeViewController: UIViewController {
     }
     
     func findDuplicateString(_ str: String) {
-        var str1 = str
-        var duplicateStr = ""
+        let str1 = str
+        _ = ""
         var index1 = 0
         let input = "Swift Tutorials"
-        let char = input[input.index(input.startIndex, offsetBy: 3)]
+        _ = input[input.index(input.startIndex, offsetBy: 3)]
         while index1 < str1.count {
             let firstS = str1[str.index(str.startIndex, offsetBy: index1)]
             print(firstS)
@@ -1633,7 +1722,7 @@ class HomeViewController: UIViewController {
     }
     func bubbleSort() {
         var arr = [2,5,6,4,7]
-        for index in 0..<arr.count {
+        for _ in 0..<arr.count {
             for index2 in 0..<arr.count - 1 {
                 if arr[index2] > arr[index2+1] {
                     let temp = arr[index2]
@@ -1664,14 +1753,14 @@ class HomeViewController: UIViewController {
         print(nums1.sorted())
     }
     func climbStairs(_ n: Int) -> Int {
-        var n = 4
+        let n = 4
         if n < 2 {
             return 1
         }
         var step1 = 1
         var step2 = 1
         var result = 0
-        for item in 2...n {
+        for _ in 2...n {
             print(step1,step2)
             result = step1 + step2
             step2 = step1
@@ -1746,7 +1835,7 @@ class HomeViewController: UIViewController {
     }
     
     func longestCommonPrefix(_ strs: [String]) -> String {
-        guard var strsArrOne = strs.first, !strsArrOne.isEmpty else {
+        guard let strsArrOne = strs.first, !strsArrOne.isEmpty else {
             return ""
         }
         var prefixArr = [String]()
@@ -1837,7 +1926,7 @@ class HomeViewController: UIViewController {
     }
     func lengthOfLongestSubstring(_ s: String) -> Int {
         
-        var strArr = [String]()
+        let strArr = [String]()
         
         for (index,onechar) in s.enumerated() {
             print(index,onechar)
@@ -1939,7 +2028,7 @@ class HomeViewController: UIViewController {
             return Int(tempint ?? 0)
         }
         var result = 0
-        for (index, item) in s.enumerated() {
+        for (_, item) in s.enumerated() {
             result = result*26 + getInteger(item) - 64
         }
         return result
@@ -1961,7 +2050,7 @@ class HomeViewController: UIViewController {
     }
     
     func moveZeroes(_ nums: inout [Int]) {
-        var zeros = nums.count
+        let zeros = nums.count
         var output = [Int]()
         //        for item in nums {
         //            if item != 0 {
