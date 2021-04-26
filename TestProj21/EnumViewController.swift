@@ -19,6 +19,19 @@ enum Planet: Int {
 
 enum Beverage: CaseIterable {
     case cofee, tea, juice
+    var name: String {
+        switch self {
+        
+        case .cofee:
+            return ""
+        case .tea:
+            return ""
+
+        case .juice:
+            return ""
+
+        }
+    }
 }
 
 fileprivate enum Person {

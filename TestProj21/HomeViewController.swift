@@ -228,8 +228,107 @@ class HomeViewController: UIViewController {
 //                      ["Mary_0","in"],
 //                      ["John_0","out"],
 //                      ["Mary_0","out"]]
-        print(shopInAndOutEvents(events: events))
+//        print(shopInAndOutEvents(events: events))
+//        let str = "babad"
+//        print(longestPalindrome(str))
+//        let nums = [-1,0,1,2,-1,-4]
+//        print(threeSum(nums))
+//        let nums = [8,1,2,2,3]
+//        print(smallerNumbersThanCurrent(nums))
+        let s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+//        print(restoreString(s, indices))
+        print(firstUniqChar(s))
     }
+    func firstUniqChar(_ s: String) -> Int {
+        var strDict: [String: Int] = [:]
+        var oneArr = [String]()
+        for (_,item) in s.enumerated(){
+            if let valueExist = strDict[item.description]{
+                strDict[item.description] = valueExist + 1
+                oneArr.remove(at: oneArr.firstIndex(of: item.description)!)
+            } else {
+                oneArr.append(item.debugDescription)
+                strDict[item.description] = 1
+            }
+        }
+        print(oneArr)
+        return -1
+    }
+    
+    func restoreString(_ s: String, _ indices: [Int]) -> String {
+        let strArr: [Character] = Array(s)
+        var output = Array(repeating: "", count: indices.count)
+        
+        for (index,item) in indices.enumerated(){
+            let value = strArr[index]
+            output[item] = String(value)
+        }
+        return output.joined()
+    }
+
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var output = [Int]()
+        for index in 0..<nums.count {
+            var numcount = 0
+            for index1 in 0..<nums.count{
+                if nums[index] > nums[index1] {
+                    numcount += 1
+                }
+            }
+            output.append(numcount)
+        }
+        return output
+    }
+    
+    func threeSum(_ nums: [Int]) -> [[Int]] {
+        var subArr3 = [[Int]]()
+        func arrContain(arr: [Int]) -> Bool {
+            for item in subArr3 {
+                let set1 = Set(item)
+                let set2 = Set(arr)
+                if set1 == set2 {
+                    return true
+                }
+            }
+            return false
+        }
+        var subArr: [[Int]] = [[]]
+        for item in nums {
+            for oneSubArr in subArr {
+                let tempArr = oneSubArr + [item]
+                subArr.append(tempArr)
+                if tempArr.count == 3, tempArr.reduce(0, +) == 0, !arrContain(arr: tempArr) {
+                    subArr3.append(tempArr)
+                }
+            }
+        }
+        return subArr3
+    }
+
+    func longestPalindrome(_ s: String) -> String {
+        func isPalindromT(tempArr: [Character]) -> Bool {
+            for i in 0...tempArr.count/2 {
+                let first = tempArr[i]
+                let last = tempArr[tempArr.count-1-i]
+                if first != last {
+                    return false
+                }
+            }
+            return true
+        }
+        let strArr = Array(s)
+        var largeStrArr  = ""
+        for index in 0..<strArr.count {
+            for index1 in index..<s.count{
+                let oneStr = Array(strArr[index...index1])
+                if largeStrArr.count<oneStr.count ,isPalindromT(tempArr: oneStr) {
+                    largeStrArr = String(oneStr)
+                }
+            }
+        }
+        return largeStrArr
+    }
+
     
     func shopInAndOutEvents(events: [[String]]) -> Bool {
         var userDict = [String: String]()
@@ -1884,22 +1983,6 @@ class HomeViewController: UIViewController {
             }
         }
         return true
-    }
-    func longestPalindrome(_ s: String) -> String { // incomplete
-        var arrayString = [String]()
-        for item in s {
-            let subArr = s.components(separatedBy: String(item))
-            for subOne in subArr {
-                if ((subArr.first?.isEmpty) != nil) {
-                    arrayString.append(String(item) + subOne)
-                }
-                else {
-                    arrayString.append(subOne + String(item))
-                }
-            }
-        }
-        print(Set(arrayString))
-        return s
     }
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         let output = (nums1 + nums2).sorted()

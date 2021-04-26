@@ -10,6 +10,7 @@ import UIKit
 struct MyStruct: Equatable {
     var age: Int = 0
     var name: String = "name"
+    var newname: String?
 }
 class MyClass {
     var leadName = "Rahul"

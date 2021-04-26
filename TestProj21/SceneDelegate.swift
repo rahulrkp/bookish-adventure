@@ -17,8 +17,100 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+//        print(binarygap(167345))
+//        var A = [3, 8, 9, 7, 6], K = 3
+//        print(Rotation(&A, K))
+//        var test = [9, 3, 9, 3, 9, 7, 9]
+//        print(findUnpair(&test))
+//        let X = 10,Y = 85,D = 30
+//        print(FrogJmp(X, Y, D))
+    }
+    public func FrogJmp(_ X : Int, _ Y : Int, _ D : Int) -> Int {
+        var jumpdistance = X
+        var jumpCount = 0
+        var X = X
+        while jumpdistance <= Y {
+            jumpdistance = X + D
+            X = jumpdistance
+            jumpCount += 1
+        }
+        return jumpCount
     }
 
+    public func findUnpair(_ A : inout [Int]) -> Int {
+        A.reduce(0, ^)
+        var output = [Int]()
+        for item in A {
+            if output.contains(item) {
+                output.remove(at: output.firstIndex(of: item)!)
+            }
+            else {
+                output.append(item)
+            }
+        }
+        return output.first!
+    }
+    
+    public func Rotation(_ A : inout [Int], _ K : Int) -> [Int] {
+        for _ in 0..<K{
+            if let last = A.last {
+                A.insert(last, at: 0)
+                A.removeLast()
+            }
+        }
+        return A
+    }
+    
+    public func binarygap(_ N : Int) -> Int {
+        let nativeBinaryStr = String(N, radix: 2) // 1001000101
+//        var val = N
+//        var binaryArr = [Int]()
+//        while val > 0 {
+//            binaryArr.insert(val%2, at: 0)
+//            val = val / 2
+//
+//        }
+        let intBinaryArr = nativeBinaryStr.map{Int(String($0))}
+        var gap = 0
+        var finalcount = 0
+        for item in intBinaryArr {
+            if item == 1 {
+                if finalcount < gap {
+                    finalcount = gap
+                }
+                gap = 0
+            } else if item == 0 {
+                gap += 1
+            }
+        }
+        return finalcount
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
